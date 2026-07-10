@@ -139,6 +139,9 @@ h1:before, .anchor:before {
 
 .news-item {
     position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 0.62rem;
     padding: 0 0 0.86rem;
 }
 
@@ -160,8 +163,9 @@ h1:before, .anchor:before {
 }
 
 .news-date {
-    display: inline-block;
-    margin-bottom: 0.2rem;
+    display: inline-flex;
+    flex: 0 0 auto;
+    margin-bottom: 0;
     padding: 0.14rem 0.42rem 0.16rem;
     border-radius: 4px;
     background: #f3f6f8;
@@ -172,11 +176,23 @@ h1:before, .anchor:before {
     line-height: 1.2;
 }
 
+.news-text {
+    min-width: 0;
+}
+
 .news-item p {
     margin: 0;
     color: #3f4d5a;
     font-size: 0.95rem;
     line-height: 1.45;
+}
+
+@include breakpoint(max-width $small) {
+    .news-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.24rem;
+    }
 }
 
 /* Paper filter & list (kw66 style) */
