@@ -84,6 +84,17 @@
     return html;
   }
 
+  function getLinkIconClass(label) {
+    var normalized = String(label || '').toLowerCase();
+    if (normalized.indexOf('code') !== -1 || normalized.indexOf('github') !== -1) {
+      return 'fab fa-github';
+    }
+    if (normalized.indexOf('data') !== -1) {
+      return 'fas fa-database';
+    }
+    return 'fas fa-link';
+  }
+
   // ── Build paper list HTML ──
   function renderPaperList(container, papers, highlightAuthor) {
     container.innerHTML = '';
@@ -107,11 +118,14 @@
         .join(', ');
       article.appendChild(authors);
 
-      // Venue
+      // Venue and links footer
+      var footer = document.createElement('div');
+      footer.className = 'work-footer';
+
       var venue = document.createElement('p');
       venue.className = 'work-meta';
       venue.innerHTML = escapeHtml(paper.venue).replace(/\*([^*]+)\*/g, '<em>$1</em>');
-      article.appendChild(venue);
+      footer.appendChild(venue);
 
       // Links row
       var validLinks = (paper.links || []).filter(function (link) { return link.url; });
@@ -124,11 +138,22 @@
           a.href = link.url;
           a.target = '_blank';
           a.rel = 'noopener noreferrer';
-          a.textContent = link.label;
+
+          var icon = document.createElement('i');
+          icon.className = getLinkIconClass(link.label);
+          icon.setAttribute('aria-hidden', 'true');
+          a.appendChild(icon);
+
+          var label = document.createElement('span');
+          label.textContent = link.label;
+          a.appendChild(label);
+
           linksRow.appendChild(a);
         });
-        article.appendChild(linksRow);
+        footer.appendChild(linksRow);
       }
+
+      article.appendChild(footer);
 
       container.appendChild(article);
     });

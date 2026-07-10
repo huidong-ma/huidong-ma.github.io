@@ -111,9 +111,11 @@ h1:before, .anchor:before {
 /* Paper filter & list (kw66 style) */
 
 .paper-filter-toolbar {
-    margin-bottom: 0.82rem;
-    padding-bottom: 0.86rem;
-    border-bottom: 1px solid #e6ecef;
+    margin: 0 0 0.95rem;
+    padding: 0.74rem 0.78rem;
+    border: 1px solid #e3e9ee;
+    border-radius: 8px;
+    background: #fbfcfd;
 }
 
 .paper-filter-row {
@@ -200,11 +202,24 @@ h1:before, .anchor:before {
 
 .paper-list {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.82rem;
 }
 
 .paper-list-item {
-    padding: 1rem 0 0.94rem;
-    border-bottom: 1px solid #edf1f3;
+    padding: 0.92rem 1rem 0.86rem;
+    border: 1px solid #e6ecef;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 1px 2px rgba(31, 45, 61, 0.04);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.paper-list-item:hover {
+    border-color: #b9d2e0;
+    box-shadow: 0 10px 22px rgba(31, 45, 61, 0.08);
+    transform: translateY(-1px);
 }
 
 .paper-list-item[hidden] {
@@ -212,59 +227,93 @@ h1:before, .anchor:before {
 }
 
 .work-title {
-    margin: 0 0 0.34rem;
-    color: #2b5d7a;
-    font-size: 1.14rem;
+    margin: 0 0 0.38rem;
+    color: #253241;
+    font-size: 1.08rem;
     font-weight: 700;
-    line-height: 1.34;
+    line-height: 1.36;
+    transition: color 0.2s ease;
+}
+
+.paper-list-item:hover .work-title {
+    color: #2b5d7a;
 }
 
 .work-authors {
-    margin: 0 0 0.38rem;
+    margin: 0 0 0.64rem;
     color: #555;
-    line-height: 1.58;
+    line-height: 1.55;
+    font-size: 0.94rem;
 }
 
 .work-authors strong {
     color: #222;
 }
 
+.work-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0.72rem;
+    padding-top: 0.66rem;
+    border-top: 1px solid #edf1f3;
+}
+
 .work-meta {
-    margin: 0 0 0.48rem;
-    color: #667683;
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.22rem 0.52rem 0.24rem;
+    border-radius: 4px;
+    background: #f3f6f8;
+    color: #425466;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.25;
 }
 
 .work-links-row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.52rem;
-    margin-top: 0.12rem;
+    justify-content: flex-end;
+    gap: 0.36rem;
+    margin-top: 0;
+    flex-shrink: 0;
 }
 
 .paper-link-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 1.92rem;
-    padding: 0.32rem 0.74rem 0.38rem;
-    border: 1px solid #d1dae0;
-    border-radius: 0;
+    gap: 0.28rem;
+    min-height: 1.58rem;
+    padding: 0.18rem 0.46rem 0.22rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
     background: #ffffff;
-    color: #21465e;
-    font-size: 0.82rem;
-    font-weight: 700;
+    color: #58677a;
+    font-size: 0.75rem;
+    font-weight: 600;
     line-height: 1;
     text-decoration: none !important;
-    box-shadow: 0 8px 16px rgba(33, 55, 76, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    box-shadow: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.paper-link-button i {
+    font-size: 0.72rem;
+    line-height: 1;
 }
 
 .paper-link-button:hover {
-    border-color: #bac8d0;
-    box-shadow: 0 10px 20px rgba(33, 55, 76, 0.1);
-    color: #17384d;
-    transform: translateY(-2px);
+    border-color: #d9e7ef;
+    background: #f1f7fb;
+    box-shadow: none;
+    color: #2b5d7a;
+    transform: none;
 }
 
 .paper-link-button--disabled {
@@ -302,4 +351,28 @@ h1:before, .anchor:before {
     margin: 0.92rem 0 0;
     color: #6f8190;
     font-size: 0.9rem;
+}
+
+@include breakpoint(max-width $small) {
+    .paper-filter-toolbar {
+        padding: 0.66rem;
+    }
+
+    .paper-list {
+        gap: 0.72rem;
+    }
+
+    .paper-list-item {
+        padding: 0.86rem 0.86rem 0.78rem;
+    }
+
+    .work-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.55rem;
+    }
+
+    .work-links-row {
+        justify-content: flex-start;
+    }
 }
