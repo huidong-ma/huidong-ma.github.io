@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # Biography
-I am Huidong Ma, a Ph.D. candidate in Computer Science and Technology at Nankai University, advised by Prof. [Xiaoguang Liu](https://cc.nankai.edu.cn/2021/0323/c13619a548878/page.htm) and Prof. [Gang Wang](https://cc.nankai.edu.cn/2021/0323/c13619a548871/page.htm). Currently, I am a visiting student at the College of Computing and Data Science, Nanyang Technological University, working with Prof. [Wentong Cai](https://personal.ntu.edu.sg/aswtcai/) (Sept. 2025 – Aug. 2026). My research interests include **Data Compression**, **Deep Learning**, and **High-Performance Computing**. Please feel free to reach out if you are interested in my research.
+I am Huidong Ma, a Ph.D. candidate in Computer Science and Technology at Nankai University, advised by Prof. [Xiaoguang Liu](https://cc.nankai.edu.cn/2021/0323/c13619a548878/page.htm) and Prof. [Gang Wang](https://cc.nankai.edu.cn/2021/0323/c13619a548871/page.htm). Currently, I am a visiting student at the College of Computing and Data Science, Nanyang Technological University, working with Prof. [Wentong Cai](https://personal.ntu.edu.sg/aswtcai/) (Sept. 2025 – Aug. 2026). My research interests include **Data Compression**, **Deep Learning**, and **High-Performance Computing**, with 10+ publications (9 first-author) at venues including CVPR, ACL, WWW, SIGKDD and FCS. I am also working on research related to **Large Language Model**. Please feel free to reach out if you are interested in my research.
 
 # News
 
