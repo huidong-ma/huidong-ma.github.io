@@ -187,6 +187,14 @@
     &:hover {
       color: $masthead-link-color-hover;
     }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:focus-visible {
+      color: $masthead-link-color-hover;
+    }
   }
 
   button {
@@ -241,7 +249,8 @@
                 transform: scaleX(0); /* hide*/
       }
 
-      &:hover:before {
+      &:hover:before,
+      &:focus-visible:before {
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
                 transform: scaleX(1); /* reveal*/
@@ -304,6 +313,43 @@
       &:last-child {
         border-bottom: none;
       }
+    }
+  }
+}
+
+@include breakpoint(max-width $medium) {
+  .masthead__menu {
+    min-width: 0;
+  }
+
+  .greedy-nav {
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    button {
+      display: none !important;
+    }
+
+    .visible-links {
+      display: inline-flex;
+      min-width: max-content;
+      white-space: nowrap;
+
+      li {
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+
+    .hidden-links {
+      display: none !important;
     }
   }
 }
