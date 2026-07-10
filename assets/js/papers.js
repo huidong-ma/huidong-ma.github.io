@@ -58,6 +58,7 @@
         var willOpen = !tooltip.classList.contains('is-open');
         closeVenueTooltips(tooltip);
         tooltip.classList.toggle('is-open', willOpen);
+        if (!willOpen) tooltip.blur();
       });
     });
 

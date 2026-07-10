@@ -486,8 +486,6 @@ h1:before, .anchor:before {
     transform: translate(-50%, 0.18rem) rotate(45deg);
 }
 
-.venue-tooltip:hover:before,
-.venue-tooltip:hover:after,
 .venue-tooltip:focus-visible:before,
 .venue-tooltip:focus-visible:after,
 .venue-tooltip.is-open:before,
@@ -495,16 +493,29 @@ h1:before, .anchor:before {
     opacity: 1;
 }
 
-.venue-tooltip:hover:before,
 .venue-tooltip:focus-visible:before,
 .venue-tooltip.is-open:before {
     transform: translate(-50%, 0);
 }
 
-.venue-tooltip:hover:after,
 .venue-tooltip:focus-visible:after,
 .venue-tooltip.is-open:after {
     transform: translate(-50%, 0) rotate(45deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .venue-tooltip:hover:before,
+    .venue-tooltip:hover:after {
+        opacity: 1;
+    }
+
+    .venue-tooltip:hover:before {
+        transform: translate(-50%, 0);
+    }
+
+    .venue-tooltip:hover:after {
+        transform: translate(-50%, 0) rotate(45deg);
+    }
 }
 
 .work-links-row {
