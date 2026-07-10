@@ -42,6 +42,38 @@
     updateFilterButtons();
   }
 
+  function closeVenueTooltips(exceptEl) {
+    document.querySelectorAll('.venue-tooltip.is-open').forEach(function (tooltip) {
+      if (tooltip !== exceptEl) tooltip.classList.remove('is-open');
+    });
+  }
+
+  function initVenueTooltips() {
+    var tooltips = Array.from(document.querySelectorAll('.venue-tooltip[data-tooltip]'));
+    if (!tooltips.length) return;
+
+    tooltips.forEach(function (tooltip) {
+      tooltip.addEventListener('click', function (event) {
+        event.stopPropagation();
+        var willOpen = !tooltip.classList.contains('is-open');
+        closeVenueTooltips(tooltip);
+        tooltip.classList.toggle('is-open', willOpen);
+      });
+
+      tooltip.addEventListener('blur', function () {
+        tooltip.classList.remove('is-open');
+      });
+    });
+
+    document.addEventListener('click', function () {
+      closeVenueTooltips();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeVenueTooltips();
+    });
+  }
+
   function init() {
     var toolbar = document.getElementById('paper-filter-toolbar');
     var list = document.getElementById('paper-list');
@@ -69,6 +101,7 @@
     });
 
     applyFilters();
+    initVenueTooltips();
   }
 
   if (document.readyState === 'loading') {

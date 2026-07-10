@@ -22,6 +22,7 @@ papers:
   - Gang Wang
   - Wentong Cai
   venue: ACL 2026 Main (Oral)
+  venue_note: Annual Meeting of the Association for Computational Linguistics
   tags:
   - first-author
   - data-compression
@@ -43,6 +44,7 @@ papers:
   - Gang Wang
   - Wentong Cai
   venue: ACL 2026 Findings
+  venue_note: Findings of the Association for Computational Linguistics
   tags:
   - data-compression
   links:
@@ -58,6 +60,7 @@ papers:
   - Tingting Li
   - Jianwei Yin
   venue: DAC 2026
+  venue_note: Design Automation Conference
   tags:
   - cloud-computing
   links:
@@ -73,6 +76,7 @@ papers:
   - Gang Wang
   - Wentong Cai
   venue: CVPR 2026
+  venue_note: IEEE/CVF Conference on Computer Vision and Pattern Recognition
   tags:
   - first-author
   - data-compression
@@ -92,6 +96,7 @@ papers:
   - Cheng Zhong
   - Wentong Cai
   venue: SIGKDD 2025
+  venue_note: ACM SIGKDD Conference on Knowledge Discovery and Data Mining
   tags:
   - data-compression
   links:
@@ -108,6 +113,7 @@ papers:
   - Xiaoguang Liu
   - Gang Wang
   venue: WWW 2025
+  venue_note: The Web Conference
   tags:
   - first-author
   - data-compression
@@ -124,6 +130,7 @@ papers:
   - Xiaoguang Liu
   - Gang Wang
   venue: ICASSP 2025
+  venue_note: IEEE International Conference on Acoustics, Speech and Signal Processing
   tags:
   - first-author
   - data-compression
@@ -142,6 +149,7 @@ papers:
   - Gang Wang
   - Xiaoguang Liu
   venue: ICASSP 2025
+  venue_note: IEEE International Conference on Acoustics, Speech and Signal Processing
   tags:
   - data-compression
   links:
@@ -162,6 +170,7 @@ papers:
   - Xiaoguang Liu
   - Gang Wang
   venue: FCS 2025
+  venue_note: Frontiers of Computer Science
   tags:
   - first-author
   - data-compression
@@ -182,6 +191,7 @@ papers:
   - Xiaoguang Liu
   - Gang Wang
   venue: AAAI 2025
+  venue_note: AAAI Conference on Artificial Intelligence
   tags:
   - data-compression
   links:
@@ -200,6 +210,7 @@ papers:
   - Xiaoguang Liu
   - Gang Wang
   venue: Bioinformatics 2024
+  venue_note: Bioinformatics
   tags:
   - data-compression
   links:
@@ -218,6 +229,7 @@ papers:
   - Xiaoguang Liu
   - Gang Wang
   venue: DCC 2024
+  venue_note: Data Compression Conference
   tags:
   - first-author
   - data-compression
@@ -236,6 +248,7 @@ papers:
   - Xiaoguang Liu
   - Gang Wang
   venue: ICPADS 2023
+  venue_note: IEEE International Conference on Parallel and Distributed Systems
   tags:
   - first-author
   - data-compression
@@ -253,6 +266,7 @@ papers:
   - Xiaoguang Liu
   - Gang Wang
   venue: BMC Bioinformatics 2023
+  venue_note: BMC Bioinformatics
   tags:
   - data-compression
   links:
@@ -266,6 +280,7 @@ papers:
   - Danyang Chen
   - Haixiang Lin
   venue: ISBRA 2023
+  venue_note: International Symposium on Bioinformatics Research and Applications
   tags:
   - first-author
   - variant-detection
@@ -282,6 +297,7 @@ papers:
   - Haofa He
   - Feng Yang
   venue: BMC Bioinformatics 2023
+  venue_note: BMC Bioinformatics
   tags:
   - first-author
   - variant-detection

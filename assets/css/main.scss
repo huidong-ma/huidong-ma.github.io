@@ -184,7 +184,7 @@ h1:before, .anchor:before {
 .news-item {
     position: relative;
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 0.62rem;
     padding: 0 0 0.86rem;
 }
@@ -197,7 +197,7 @@ h1:before, .anchor:before {
     content: "";
     position: absolute;
     left: -1.45rem;
-    top: 0.58rem;
+    top: 0.68rem;
     width: 0.52rem;
     height: 0.52rem;
     border: 2px solid #ffffff;
@@ -209,9 +209,11 @@ h1:before, .anchor:before {
 
 .news-date {
     display: inline-flex;
+    align-items: center;
     flex: 0 0 auto;
     margin-bottom: 0;
-    padding: 0.14rem 0.42rem 0.16rem;
+    min-height: 1.36rem;
+    padding: 0 0.42rem;
     border-radius: 4px;
     background: #f3f6f8;
     color: #627486;
@@ -436,9 +438,73 @@ h1:before, .anchor:before {
     font-size: 0.68rem;
     font-weight: 500;
     line-height: 1.15;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: visible;
     white-space: nowrap;
+}
+
+.venue-tooltip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.venue-tooltip:before,
+.venue-tooltip:after {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 0.42rem);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 0.18rem);
+    transition: opacity 0.12s ease, transform 0.12s ease;
+    z-index: 20;
+}
+
+.venue-tooltip:before {
+    content: attr(data-tooltip);
+    width: max-content;
+    max-width: min(19rem, 72vw);
+    padding: 0.42rem 0.56rem 0.46rem;
+    border: 1px solid rgba(41, 61, 79, 0.08);
+    border-radius: 6px;
+    background: #263442;
+    color: #ffffff;
+    box-shadow: 0 10px 24px rgba(31, 45, 61, 0.16);
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: center;
+    white-space: normal;
+}
+
+.venue-tooltip:after {
+    content: "";
+    bottom: calc(100% + 0.18rem);
+    width: 0.48rem;
+    height: 0.48rem;
+    background: #263442;
+    transform: translate(-50%, 0.18rem) rotate(45deg);
+}
+
+.venue-tooltip:hover:before,
+.venue-tooltip:hover:after,
+.venue-tooltip:focus:before,
+.venue-tooltip:focus:after,
+.venue-tooltip.is-open:before,
+.venue-tooltip.is-open:after {
+    opacity: 1;
+}
+
+.venue-tooltip:hover:before,
+.venue-tooltip:focus:before,
+.venue-tooltip.is-open:before {
+    transform: translate(-50%, 0);
+}
+
+.venue-tooltip:hover:after,
+.venue-tooltip:focus:after,
+.venue-tooltip.is-open:after {
+    transform: translate(-50%, 0) rotate(45deg);
 }
 
 .work-links-row {

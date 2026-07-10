@@ -39,7 +39,13 @@
       </p>
 
       <div class="work-footer">
-        <p class="work-meta">{{ paper.venue }}</p>
+        <p class="work-meta">
+          {% if paper.venue_note %}
+            <span class="venue-tooltip" tabindex="0" data-tooltip="{{ paper.venue_note | escape }}" aria-label="{{ paper.venue }}: {{ paper.venue_note | escape }}">{{ paper.venue }}</span>
+          {% else %}
+            {{ paper.venue }}
+          {% endif %}
+        </p>
 
         {% capture rendered_links %}
           {% for link in paper.links %}
