@@ -489,17 +489,21 @@ h1:before, .anchor:before {
 .venue-tooltip:hover:before,
 .venue-tooltip:hover:after,
 .venue-tooltip:focus-visible:before,
-.venue-tooltip:focus-visible:after {
+.venue-tooltip:focus-visible:after,
+.venue-tooltip.is-open:before,
+.venue-tooltip.is-open:after {
     opacity: 1;
 }
 
 .venue-tooltip:hover:before,
-.venue-tooltip:focus-visible:before {
+.venue-tooltip:focus-visible:before,
+.venue-tooltip.is-open:before {
     transform: translate(-50%, 0);
 }
 
 .venue-tooltip:hover:after,
-.venue-tooltip:focus-visible:after {
+.venue-tooltip:focus-visible:after,
+.venue-tooltip.is-open:after {
     transform: translate(-50%, 0) rotate(45deg);
 }
 
