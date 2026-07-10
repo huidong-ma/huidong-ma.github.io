@@ -24,15 +24,15 @@ I am Huidong Ma, a Ph.D. candidate in Computer Science and Technology at Nankai 
 
 ---
 
+# 🔥 News
+
+{% include news-timeline.html %}
+
+---
+
 # 📄 Publications
 
-<div class='paper-filter-toolbar' id='paper-filter-toolbar'></div>
-
-<div class='paper-list' id='paper-list'></div>
-
-<p class='paper-filter-empty' id='paper-filter-empty' hidden>No papers match the selected tags.</p>
-
-<script src='{{ "/assets/js/papers.js" | relative_url }}'></script>
+{% include publications.html %}
 
 # 🚩 Professional Activities
 ### Reviewer for Journals

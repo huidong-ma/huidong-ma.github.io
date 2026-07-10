@@ -1,174 +1,17 @@
 (function () {
   'use strict';
 
-  var DATA_URL = '/data/papers.json';
-  var paperData = null;
+  var activeAuthorFilter = '';
+  var activeTopicFilter = '';
 
-  // Active filter state
-  var activeAuthorFilter = '';   // '' means "all"
-  var activeTopicFilter  = '';   // '' means no topic filter
-
-  // ── Escaping ──
-  function escapeHtml(text) {
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(text));
-    return div.innerHTML;
-  }
-
-  // ── Build the filter toolbar (single row, two groups) ──
-  function renderFilterToolbar(container, authorFilters, topicFilters, defaultFilter) {
-    container.innerHTML = '';
-
-    var row = document.createElement('div');
-    row.className = 'paper-filter-row';
-
-    // --- Author filter buttons ---
-    authorFilters.forEach(function (tag) {
-      var btn = document.createElement('button');
-      btn.className = 'author-toggle-btn';
-      btn.type = 'button';
-      btn.dataset.authorFilter = tag.key;
-      btn.textContent = tag.label;
-
-      if (tag.key === defaultFilter) {
-        btn.classList.add('is-active');
-        btn.setAttribute('aria-pressed', 'true');
-        activeAuthorFilter = tag.key;
-      } else {
-        btn.setAttribute('aria-pressed', 'false');
-      }
-
-      btn.addEventListener('click', function () {
-        onAuthorFilterClick(tag.key);
-      });
-      row.appendChild(btn);
-    });
-
-    // --- Separator ---
-    var sep = document.createElement('span');
-    sep.className = 'filter-separator';
-    row.appendChild(sep);
-
-    // --- Topic filter buttons ---
-    topicFilters.forEach(function (tag) {
-      var btn = document.createElement('button');
-      btn.className = 'paper-filter-chip';
-      btn.type = 'button';
-      btn.dataset.topicFilter = tag.key;
-      btn.textContent = tag.label;
-      btn.setAttribute('aria-pressed', 'false');
-      btn.addEventListener('click', function () {
-        onTopicFilterClick(tag.key);
-      });
-      row.appendChild(btn);
-    });
-
-    container.appendChild(row);
-  }
-
-  // ── Render a single author name (bold + sup for †) ──
-  function renderAuthor(name, highlightAuthor) {
-    var baseName = name.replace(/†/g, '').trim();
-    var hasDagger = name.indexOf('†') !== -1;
-    var isHighlight = baseName === highlightAuthor;
-
-    var html = '';
-    if (isHighlight) {
-      html += '<strong>' + escapeHtml(baseName) + '</strong>';
-    } else {
-      html += escapeHtml(baseName);
-    }
-    if (hasDagger) {
-      html += '<sup>†</sup>';
-    }
-    return html;
-  }
-
-  function getLinkIconClass(label) {
-    var normalized = String(label || '').toLowerCase();
-    if (normalized.indexOf('code') !== -1 || normalized.indexOf('github') !== -1) {
-      return 'fab fa-github';
-    }
-    if (normalized.indexOf('data') !== -1) {
-      return 'fas fa-database';
-    }
-    return 'fas fa-link';
-  }
-
-  // ── Build paper list HTML ──
-  function renderPaperList(container, papers, highlightAuthor) {
-    container.innerHTML = '';
-
-    papers.forEach(function (paper) {
-      var article = document.createElement('article');
-      article.className = 'paper-list-item';
-      article.dataset.paperTags = paper.tags.join(',');
-
-      // Title
-      var title = document.createElement('p');
-      title.className = 'work-title';
-      title.textContent = paper.title;
-      article.appendChild(title);
-
-      // Authors
-      var authors = document.createElement('p');
-      authors.className = 'work-authors';
-      authors.innerHTML = paper.authors
-        .map(function (a) { return renderAuthor(a, highlightAuthor); })
-        .join(', ');
-      article.appendChild(authors);
-
-      // Venue and links footer
-      var footer = document.createElement('div');
-      footer.className = 'work-footer';
-
-      var venue = document.createElement('p');
-      venue.className = 'work-meta';
-      venue.innerHTML = escapeHtml(paper.venue).replace(/\*([^*]+)\*/g, '<em>$1</em>');
-      footer.appendChild(venue);
-
-      // Links row
-      var validLinks = (paper.links || []).filter(function (link) { return link.url; });
-      if (validLinks.length) {
-        var linksRow = document.createElement('div');
-        linksRow.className = 'work-links-row';
-        validLinks.forEach(function (link) {
-          var a = document.createElement('a');
-          a.className = 'paper-link-button';
-          a.href = link.url;
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-
-          var icon = document.createElement('i');
-          icon.className = getLinkIconClass(link.label);
-          icon.setAttribute('aria-hidden', 'true');
-          a.appendChild(icon);
-
-          var label = document.createElement('span');
-          label.textContent = link.label;
-          a.appendChild(label);
-
-          linksRow.appendChild(a);
-        });
-        footer.appendChild(linksRow);
-      }
-
-      article.appendChild(footer);
-
-      container.appendChild(article);
-    });
-  }
-
-  // ── Update button active states ──
   function updateFilterButtons() {
-    // Author buttons
     document.querySelectorAll('[data-author-filter]').forEach(function (btn) {
       var key = btn.dataset.authorFilter;
       var isActive = key === activeAuthorFilter;
       btn.classList.toggle('is-active', isActive);
       btn.setAttribute('aria-pressed', String(isActive));
     });
-    // Topic buttons
+
     document.querySelectorAll('[data-topic-filter]').forEach(function (btn) {
       var key = btn.dataset.topicFilter;
       var isActive = key === activeTopicFilter;
@@ -177,21 +20,20 @@
     });
   }
 
-  // ── Apply combined filters ──
   function applyFilters() {
     var items = Array.from(document.querySelectorAll('.paper-list-item[data-paper-tags]'));
     var emptyEl = document.getElementById('paper-filter-empty');
     var visible = 0;
 
     items.forEach(function (item) {
-      var tags = item.dataset.paperTags.split(',').map(function (t) { return t.trim(); }).filter(Boolean);
+      var tags = item.dataset.paperTags.split(',').map(function (tag) {
+        return tag.trim();
+      }).filter(Boolean);
 
-      // Author filter: if set, paper must have that tag
       var authorMatch = !activeAuthorFilter || tags.indexOf(activeAuthorFilter) !== -1;
-      // Topic filter: if set, paper must have that tag
-      var topicMatch  = !activeTopicFilter  || tags.indexOf(activeTopicFilter) !== -1;
-
+      var topicMatch = !activeTopicFilter || tags.indexOf(activeTopicFilter) !== -1;
       var match = authorMatch && topicMatch;
+
       item.hidden = !match;
       if (match) visible++;
     });
@@ -200,49 +42,33 @@
     updateFilterButtons();
   }
 
-  // ── Author filter click (single toggle: on/off) ──
-  function onAuthorFilterClick(key) {
-    if (activeAuthorFilter === key) {
-      activeAuthorFilter = '';
-    } else {
-      activeAuthorFilter = key;
-    }
-    applyFilters();
-  }
-
-  // ── Topic filter click (single-select, click again to deselect) ──
-  function onTopicFilterClick(key) {
-    if (activeTopicFilter === key) {
-      activeTopicFilter = '';
-    } else {
-      activeTopicFilter = key;
-    }
-    applyFilters();
-  }
-
-  // ── Init: fetch JSON and render ──
   function init() {
     var toolbar = document.getElementById('paper-filter-toolbar');
     var list = document.getElementById('paper-list');
     if (!toolbar || !list) return;
 
-    fetch(DATA_URL)
-      .then(function (res) { return res.json(); })
-      .then(function (data) {
-        paperData = data;
-        var defaultFilter = data.defaultFilter || '';
-        if (defaultFilter && defaultFilter !== 'all') {
-          activeAuthorFilter = defaultFilter;
-        }
+    var activeAuthorButton = toolbar.querySelector('[data-author-filter].is-active');
+    if (activeAuthorButton) {
+      activeAuthorFilter = activeAuthorButton.dataset.authorFilter || '';
+    }
 
-        renderFilterToolbar(toolbar, data.authorFilters, data.topicFilters, defaultFilter);
-        renderPaperList(list, data.papers, data.highlightAuthor);
+    toolbar.querySelectorAll('[data-author-filter]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var key = btn.dataset.authorFilter;
+        activeAuthorFilter = activeAuthorFilter === key ? '' : key;
         applyFilters();
-      })
-      .catch(function (err) {
-        console.error('Failed to load papers.json:', err);
-        list.innerHTML = '<p style="color:#999">Failed to load publications.</p>';
       });
+    });
+
+    toolbar.querySelectorAll('[data-topic-filter]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var key = btn.dataset.topicFilter;
+        activeTopicFilter = activeTopicFilter === key ? '' : key;
+        applyFilters();
+      });
+    });
+
+    applyFilters();
   }
 
   if (document.readyState === 'loading') {

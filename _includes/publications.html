@@ -1,0 +1,74 @@
+<div class="paper-filter-toolbar" id="paper-filter-toolbar">
+  <div class="paper-filter-row">
+    {% assign default_filter = site.data.papers.defaultFilter %}
+    {% for tag in site.data.papers.authorFilters %}
+      <button
+        class="author-toggle-btn{% if tag.key == default_filter %} is-active{% endif %}"
+        type="button"
+        data-author-filter="{{ tag.key }}"
+        aria-pressed="{% if tag.key == default_filter %}true{% else %}false{% endif %}"
+      >{{ tag.label }}</button>
+    {% endfor %}
+
+    {% if site.data.papers.authorFilters.size > 0 and site.data.papers.topicFilters.size > 0 %}
+      <span class="filter-separator"></span>
+    {% endif %}
+
+    {% for tag in site.data.papers.topicFilters %}
+      <button
+        class="paper-filter-chip"
+        type="button"
+        data-topic-filter="{{ tag.key }}"
+        aria-pressed="false"
+      >{{ tag.label }}</button>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="paper-list" id="paper-list">
+  {% assign highlight_author = site.data.papers.highlightAuthor %}
+  {% for paper in site.data.papers.papers %}
+    <article class="paper-list-item" data-paper-tags="{{ paper.tags | join: ',' }}">
+      <p class="work-title">{{ paper.title }}</p>
+
+      <p class="work-authors">
+        {% for author in paper.authors %}
+          {% assign base_author = author | replace: '†', '' | strip %}
+          {% if base_author == highlight_author %}<strong>{{ base_author }}</strong>{% else %}{{ base_author }}{% endif %}{% if author contains '†' %}<sup>†</sup>{% endif %}{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </p>
+
+      <div class="work-footer">
+        <p class="work-meta">{{ paper.venue }}</p>
+
+        {% capture rendered_links %}
+          {% for link in paper.links %}
+            {% if link.url %}
+              {% assign label_down = link.label | downcase %}
+              <a class="paper-link-button" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+                {% if label_down contains 'code' %}
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                {% elsif label_down contains 'github' %}
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                {% elsif label_down contains 'data' %}
+                  <i class="fas fa-database" aria-hidden="true"></i>
+                {% else %}
+                  <i class="fas fa-link" aria-hidden="true"></i>
+                {% endif %}
+                <span>{{ link.label }}</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        {% endcapture %}
+        {% assign rendered_links_clean = rendered_links | strip %}
+        {% if rendered_links_clean != "" %}
+          <div class="work-links-row">{{ rendered_links }}</div>
+        {% endif %}
+      </div>
+    </article>
+  {% endfor %}
+</div>
+
+<p class="paper-filter-empty" id="paper-filter-empty" hidden>No papers match the selected tags.</p>
+
+<script src="{{ '/assets/js/papers.js' | relative_url }}"></script>

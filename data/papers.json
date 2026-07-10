@@ -1,5 +1,0 @@
----
-layout: null
-permalink: /data/papers.json
----
-{{ site.data.papers | jsonify }}
