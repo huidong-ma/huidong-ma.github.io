@@ -489,21 +489,17 @@ h1:before, .anchor:before {
 .venue-tooltip:hover:before,
 .venue-tooltip:hover:after,
 .venue-tooltip:focus-visible:before,
-.venue-tooltip:focus-visible:after,
-.venue-tooltip.is-open:before,
-.venue-tooltip.is-open:after {
+.venue-tooltip:focus-visible:after {
     opacity: 1;
 }
 
 .venue-tooltip:hover:before,
-.venue-tooltip:focus-visible:before,
-.venue-tooltip.is-open:before {
+.venue-tooltip:focus-visible:before {
     transform: translate(-50%, 0);
 }
 
 .venue-tooltip:hover:after,
-.venue-tooltip:focus-visible:after,
-.venue-tooltip.is-open:after {
+.venue-tooltip:focus-visible:after {
     transform: translate(-50%, 0) rotate(45deg);
 }
 
@@ -603,18 +599,6 @@ h1:before, .anchor:before {
         align-items: flex-start;
         flex-direction: row;
         gap: 0.5rem;
-    }
-
-    .venue-tooltip:before {
-        width: min(19rem, calc(100vw - 2rem));
-        max-width: none;
-        text-align: center;
-    }
-
-    .venue-tooltip:hover:before,
-    .venue-tooltip:focus-visible:before,
-    .venue-tooltip.is-open:before {
-        transform: translate(calc(-50% + var(--venue-tooltip-shift, 0px)), 0);
     }
 
     .work-links-row {

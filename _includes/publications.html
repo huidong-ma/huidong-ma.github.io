@@ -41,7 +41,7 @@
       <div class="work-footer">
         <p class="work-meta">
           {% if paper.venue_note %}
-            <span class="venue-tooltip" tabindex="0" data-tooltip="{{ paper.venue_note | escape }}" aria-label="{{ paper.venue }}: {{ paper.venue_note | escape }}">{{ paper.venue }}</span>
+            <span class="venue-tooltip" data-tooltip="{{ paper.venue_note | escape }}" aria-label="{{ paper.venue }}: {{ paper.venue_note | escape }}">{{ paper.venue }}</span>
           {% else %}
             {{ paper.venue }}
           {% endif %}
