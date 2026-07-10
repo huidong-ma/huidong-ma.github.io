@@ -69,6 +69,7 @@
         closeVenueTooltips(tooltip);
         if (willOpen) updateVenueTooltipPosition(tooltip);
         tooltip.classList.toggle('is-open', willOpen);
+        if (!willOpen) tooltip.style.removeProperty('--venue-tooltip-shift');
       });
 
       tooltip.addEventListener('focus', function () {
