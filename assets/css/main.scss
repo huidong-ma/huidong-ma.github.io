@@ -369,7 +369,7 @@ h1:before, .anchor:before {
 
 .work-footer {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 0.75rem;
     margin-top: 0.72rem;
@@ -381,6 +381,7 @@ h1:before, .anchor:before {
     display: inline-flex;
     align-items: center;
     min-width: 0;
+    min-height: 1.58rem;
     max-width: 100%;
     margin: 0;
     padding: 0.18rem 0.46rem 0.2rem;
@@ -397,7 +398,7 @@ h1:before, .anchor:before {
 
 .work-links-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 0.36rem;
@@ -488,7 +489,7 @@ h1:before, .anchor:before {
     }
 
     .work-footer {
-        align-items: center;
+        align-items: flex-start;
         flex-direction: row;
         gap: 0.5rem;
     }
