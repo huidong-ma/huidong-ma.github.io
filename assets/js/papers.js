@@ -44,8 +44,18 @@
 
   function closeVenueTooltips(exceptEl) {
     document.querySelectorAll('.venue-tooltip.is-open').forEach(function (tooltip) {
-      if (tooltip !== exceptEl) tooltip.classList.remove('is-open');
+      if (tooltip !== exceptEl) {
+        tooltip.classList.remove('is-open');
+        tooltip.style.removeProperty('--venue-tooltip-shift');
+      }
     });
+  }
+
+  function updateVenueTooltipPosition(tooltip) {
+    var rect = tooltip.getBoundingClientRect();
+    var tooltipCenter = rect.left + rect.width / 2;
+    var viewportCenter = window.innerWidth / 2;
+    tooltip.style.setProperty('--venue-tooltip-shift', (viewportCenter - tooltipCenter) + 'px');
   }
 
   function initVenueTooltips() {
@@ -57,11 +67,17 @@
         event.stopPropagation();
         var willOpen = !tooltip.classList.contains('is-open');
         closeVenueTooltips(tooltip);
+        if (willOpen) updateVenueTooltipPosition(tooltip);
         tooltip.classList.toggle('is-open', willOpen);
+      });
+
+      tooltip.addEventListener('focus', function () {
+        updateVenueTooltipPosition(tooltip);
       });
 
       tooltip.addEventListener('blur', function () {
         tooltip.classList.remove('is-open');
+        tooltip.style.removeProperty('--venue-tooltip-shift');
       });
     });
 
@@ -71,6 +87,10 @@
 
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') closeVenueTooltips();
+    });
+
+    window.addEventListener('resize', function () {
+      document.querySelectorAll('.venue-tooltip.is-open').forEach(updateVenueTooltipPosition);
     });
   }
 

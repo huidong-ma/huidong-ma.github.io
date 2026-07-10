@@ -605,30 +605,16 @@ h1:before, .anchor:before {
         gap: 0.5rem;
     }
 
-    .venue-tooltip:before,
-    .venue-tooltip:after {
-        left: 0;
-    }
-
     .venue-tooltip:before {
-        max-width: calc(100vw - 2rem);
-        text-align: left;
-    }
-
-    .venue-tooltip:after {
-        left: 0.72rem;
+        width: min(19rem, calc(100vw - 2rem));
+        max-width: none;
+        text-align: center;
     }
 
     .venue-tooltip:hover:before,
     .venue-tooltip:focus:before,
     .venue-tooltip.is-open:before {
-        transform: translate(0, 0);
-    }
-
-    .venue-tooltip:hover:after,
-    .venue-tooltip:focus:after,
-    .venue-tooltip.is-open:after {
-        transform: translate(0, 0) rotate(45deg);
+        transform: translate(calc(-50% + var(--venue-tooltip-shift, 0px)), 0);
     }
 
     .work-links-row {
