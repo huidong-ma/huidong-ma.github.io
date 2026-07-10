@@ -380,6 +380,7 @@ h1:before, .anchor:before {
 .work-meta {
     display: inline-flex;
     align-items: center;
+    min-width: 0;
     max-width: 100%;
     margin: 0;
     padding: 0.18rem 0.46rem 0.2rem;
@@ -389,6 +390,9 @@ h1:before, .anchor:before {
     font-size: 0.68rem;
     font-weight: 500;
     line-height: 1.15;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .work-links-row {
@@ -484,12 +488,12 @@ h1:before, .anchor:before {
     }
 
     .work-footer {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 0.55rem;
+        align-items: center;
+        flex-direction: row;
+        gap: 0.5rem;
     }
 
     .work-links-row {
-        justify-content: flex-start;
+        justify-content: flex-end;
     }
 }
