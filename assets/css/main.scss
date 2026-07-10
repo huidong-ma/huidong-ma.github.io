@@ -127,6 +127,10 @@ h1:before, .anchor:before {
     margin-top: 0.2rem;
 }
 
+.page__content > h1:before {
+    content: none;
+}
+
 .page__content > h1:after {
     content: "";
     height: 1px;
