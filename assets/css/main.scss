@@ -108,6 +108,46 @@ h1:before, .anchor:before {
     font-size: .8em;
 }
 
+/* Page section rhythm */
+
+.page__content > h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2.25rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0;
+    border-bottom: 0;
+    color: #253241;
+    font-size: 1.38rem;
+    line-height: 1.2;
+}
+
+.page__content > h1:first-of-type {
+    margin-top: 0.2rem;
+}
+
+.page__content > h1:after {
+    content: "";
+    height: 1px;
+    flex: 1 1 auto;
+    background: linear-gradient(90deg, #d9e4eb 0%, rgba(217, 228, 235, 0) 100%);
+}
+
+.page__content > h3 {
+    margin-top: 1.2rem;
+    margin-bottom: 0.42rem;
+    color: #334252;
+}
+
+.page__content > h1 + p {
+    margin-top: 0;
+}
+
+.page__content hr {
+    display: none;
+}
+
 /* News timeline */
 
 .news-scroll {
