@@ -28,7 +28,7 @@ papers:
   - data-compression
   links:
   - label: Paper
-    url: https://arxiv.org/abs/2604.07239
+    url: https://aclanthology.org/2026.acl-long.324/
   - label: Code
     url: https://github.com/huidong-ma/FADE
 - title: 'AgentGC: Evolutionary Learning-based Lossless Compression for Genomics Data with LLM-driven Multiple Agent'
