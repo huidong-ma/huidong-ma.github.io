@@ -12,7 +12,7 @@ topicFilters:
 - key: cloud-computing
   label: Cloud Computing
 papers:
-- title: Efficient Learned Data Compression via Dual-Stream Feature Decoupling
+- title: "Efficient Learned Data Compression via Dual-Stream Feature Decoupling"
   authors:
   - Huidong Ma
   - Xinyan Shi
@@ -31,7 +31,7 @@ papers:
     url: https://aclanthology.org/2026.acl-long.324/
   - label: Code
     url: https://github.com/huidong-ma/FADE
-- title: 'AgentGC: Evolutionary Learning-based Lossless Compression for Genomics Data with LLM-driven Multiple Agent'
+- title: "AgentGC: Evolutionary Learning-based Lossless Compression for Genomics Data with LLM-driven Multiple Agent"
   authors:
   - Hui Sun
   - Yanfeng Ding
@@ -50,7 +50,7 @@ papers:
   links:
   - label: Paper
     url: https://arxiv.org/abs/2601.13559
-- title: 'sMoE: Elastic MoE-Based Inference with Serverless Computing via Fine-grained Expert Scaling'
+- title: "sMoE: Elastic MoE-Based Inference with Serverless Computing via Fine-grained Expert Scaling"
   authors:
   - Xiaofei Yue
   - Ziming Zhao
@@ -66,7 +66,7 @@ papers:
   links:
   - label: Paper
     url: https://ttfish.cc/content/Papers/DAC26.pdf
-- title: Learned Image Compression via Sparse Attention and Adaptive Frequency
+- title: "Learned Image Compression via Sparse Attention and Adaptive Frequency"
   authors:
   - Huidong Ma
   - Xinyan Shi
@@ -85,7 +85,7 @@ papers:
     url: https://openaccess.thecvf.com/content/CVPR2026/html/Ma_Learned_Image_Compression_via_Sparse_Attention_and_Adaptive_Frequency_CVPR_2026_paper.html
   - label: Code
     url: https://github.com/huidong-ma/SAAF
-- title: 'PMKLC: Parallel Multi-Knowledge Learning-based Lossless Compression for Large-Scale Genomics Database'
+- title: "PMKLC: Parallel Multi-Knowledge Learning-based Lossless Compression for Large-Scale Genomics Database"
   authors:
   - Hui Sun
   - Yanfeng Ding
@@ -104,7 +104,7 @@ papers:
     url: https://dl.acm.org/doi/10.1145/3711896.3737083
   - label: Code
     url: https://github.com/dingyanfeng/PMKLC
-- title: 'MSDZip: Universal Lossless Compression for Multi-source Data via Stepwise-parallel and Learning-based Prediction'
+- title: "MSDZip: Universal Lossless Compression for Multi-source Data via Stepwise-parallel and Learning-based Prediction"
   authors:
   - Huidong Ma†
   - Hui Sun†
@@ -122,7 +122,7 @@ papers:
     url: https://dl.acm.org/doi/10.1145/3696410.3714655
   - label: Code
     url: https://github.com/huidong-ma/MSDZip
-- title: Multi-source Data Lossless Compression via Parallel Expansion Mapping and xLSTM
+- title: "Multi-source Data Lossless Compression via Parallel Expansion Mapping and xLSTM"
   authors:
   - Huidong Ma
   - Hui Sun
@@ -139,7 +139,7 @@ papers:
     url: https://ieeexplore.ieee.org/document/10889184
   - label: Code
     url: https://github.com/huidong-ma/MSDLC
-- title: Adaptive Lossless Compression for Genomics Data by Multiple (s, k)-mer Encoding and XLSTM
+- title: "Adaptive Lossless Compression for Genomics Data by Multiple (s, k)-mer Encoding and XLSTM"
   authors:
   - Hui Sun†
   - Yanfeng Ding†
@@ -157,7 +157,7 @@ papers:
     url: https://ieeexplore.ieee.org/abstract/document/10887721
   - label: Code
     url: https://github.com/dingyanfeng/AGDLC
-- title: A Survey and Benchmark Evaluation for Neural-Network-Based Lossless Universal Compressors Toward Multi-Source Data
+- title: "A Survey and Benchmark Evaluation for Neural-Network-Based Lossless Universal Compressors Toward Multi-Source Data"
   authors:
   - Hui Sun†
   - Huidong Ma†
@@ -179,7 +179,7 @@ papers:
     url: https://link.springer.com/article/10.1007/s11704-024-40300-5
   - label: Code
     url: https://github.com/fahaihi/NNLCB
-- title: Genomics Data Lossless Compression with (s,k)-mer Encoding and Deep Neural Networks
+- title: "Genomics Data Lossless Compression with (s,k)-mer Encoding and Deep Neural Networks"
   authors:
   - Hui Sun†
   - Liping Yi†
@@ -199,7 +199,7 @@ papers:
     url: https://ojs.aaai.org/index.php/AAAI/article/view/33371
   - label: Code
     url: https://github.com/fahaihi/DeepGeCo
-- title: 'PQSDC: a parallel lossless compressor for quality scores data via sequences partition and Run-Length prediction mapping'
+- title: "PQSDC: a parallel lossless compressor for quality scores data via sequences partition and Run-Length prediction mapping"
   authors:
   - Hui Sun
   - Yingfeng Zheng
@@ -218,7 +218,7 @@ papers:
     url: https://academic.oup.com/bioinformatics/article/40/5/btae323/7676123?login=true
   - label: Code
     url: https://github.com/fahaihi/PQSDC
-- title: 'LRCB: A Comprehensive Benchmark Evaluation of Reference-free Lossless Compression Tools for Genomics Sequencing Long Reads Data'
+- title: "LRCB: A Comprehensive Benchmark Evaluation of Reference-free Lossless Compression Tools for Genomics Sequencing Long Reads Data"
   authors:
   - Hui Sun†
   - Huidong Ma†
@@ -238,7 +238,7 @@ papers:
     url: https://ieeexplore.ieee.org/abstract/document/10533699
   - label: Code
     url: https://github.com/fahaihi/LRCB
-- title: 'SR2C: A Structurally Redundant Short Reads Collapser for Optimizing DNA Data Compression'
+- title: "SR2C: A Structurally Redundant Short Reads Collapser for Optimizing DNA Data Compression"
   authors:
   - Hui Sun†
   - Huidong Ma†
@@ -257,7 +257,7 @@ papers:
     url: https://ieeexplore.ieee.org/document/10476304
   - label: Code
     url: https://github.com/fahaihi/SR2C
-- title: 'PMFFRC: a large-scale genomic short reads compression optimizer via memory modeling and redundant clustering'
+- title: "PMFFRC: a large-scale genomic short reads compression optimizer via memory modeling and redundant clustering"
   authors:
   - Hui Sun
   - Yingfeng Zheng
@@ -272,7 +272,7 @@ papers:
   links:
   - label: Paper
     url: https://link.springer.com/article/10.1186/s12859-023-05566-9
-- title: 'ricME: Long-Read Based Mobile Element Variant Detection Using Sequence Realignment and Identity Calculation'
+- title: "ricME: Long-Read Based Mobile Element Variant Detection Using Sequence Realignment and Identity Calculation"
   authors:
   - Huidong Ma
   - Cheng Zhong
@@ -289,7 +289,7 @@ papers:
     url: https://link.springer.com/chapter/10.1007/978-981-99-7074-2_13
   - label: Code
     url: https://github.com/huidong-ma/ricME
-- title: 'cnnLSV: detecting structural variants by encoding long-read alignment information and convolutional neural network'
+- title: "cnnLSV: detecting structural variants by encoding long-read alignment information and convolutional neural network"
   authors:
   - Huidong Ma
   - Cheng Zhong
