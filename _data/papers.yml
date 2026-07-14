@@ -211,6 +211,15 @@ papers:
   - Gang Wang
   venue: Bioinformatics 2024
   venue_note: Bioinformatics
+  venue_badges:
+  - label: CCF B
+    type: ccf-b
+  - label: JCR Q1
+    type: jcr-q1
+  - label: CAS T2
+    type: cas-t2
+  - label: IF 5.1
+    type: impact-factor
   tags:
   - data-compression
   links:

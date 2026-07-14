@@ -427,13 +427,12 @@ h1:before, .anchor:before {
 .work-meta {
     display: inline-flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.28rem;
     min-width: 0;
     min-height: 1.58rem;
     max-width: 100%;
     margin: 0;
-    padding: 0.18rem 0.46rem 0.2rem;
-    border-radius: 4px;
-    background: #f3f6f8;
     color: #425466;
     font-size: 0.68rem;
     font-weight: 500;
@@ -441,6 +440,36 @@ h1:before, .anchor:before {
     overflow: visible;
     white-space: nowrap;
 }
+
+.venue-name {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.58rem;
+    padding: 0.18rem 0.46rem 0.2rem;
+    border-radius: 4px;
+    background: #f3f6f8;
+}
+
+.venue-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.08rem;
+    padding: 0.08rem 0.32rem;
+    border: 1px solid #d6e0e6;
+    border-radius: 3px;
+    background: transparent;
+    color: #526575;
+    font-size: 0.62rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.venue-badge--ccf-a { border-color: #d9b27b; color: #8a5a1e; }
+.venue-badge--ccf-b { border-color: #a8c7cf; color: #316b77; }
+.venue-badge--ccf-c { border-color: #c8d2da; color: #5b6c78; }
+.venue-badge--jcr-q1 { border-color: #a9c6b1; color: #3f7150; }
+.venue-badge--cas-t2 { border-color: #d7bfd9; color: #765277; }
+.venue-badge--impact-factor { border-color: #d4dbe1; color: #4f6270; }
 
 .venue-tooltip {
     position: relative;

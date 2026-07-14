@@ -41,10 +41,13 @@
       <div class="work-footer">
         <p class="work-meta">
           {% if paper.venue_note %}
-            <span class="venue-tooltip" data-tooltip="{{ paper.venue_note | escape }}" aria-label="{{ paper.venue }}: {{ paper.venue_note | escape }}">{{ paper.venue }}</span>
+            <span class="venue-name venue-tooltip" data-tooltip="{{ paper.venue_note | escape }}" aria-label="{{ paper.venue }}: {{ paper.venue_note | escape }}">{{ paper.venue }}</span>
           {% else %}
-            {{ paper.venue }}
+            <span class="venue-name">{{ paper.venue }}</span>
           {% endif %}
+          {% for badge in paper.venue_badges %}
+            <span class="venue-badge venue-badge--{{ badge.type }}">{{ badge.label }}</span>
+          {% endfor %}
         </p>
 
         {% capture rendered_links %}
