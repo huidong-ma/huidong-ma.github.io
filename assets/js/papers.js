@@ -49,7 +49,7 @@
   }
 
   function initVenueTooltips() {
-    var tooltips = Array.from(document.querySelectorAll('.venue-tooltip[data-tooltip]'));
+    var tooltips = Array.from(document.querySelectorAll('.venue-tooltip[data-tooltip]:not(.venue-badges-trigger)'));
     if (!tooltips.length) return;
 
     tooltips.forEach(function (tooltip) {

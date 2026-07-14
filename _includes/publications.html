@@ -45,9 +45,12 @@
           {% else %}
             <span class="venue-name">{{ paper.venue }}</span>
           {% endif %}
-          {% for badge in paper.venue_badges %}
-            <span class="venue-badge venue-badge--{{ badge.type }}">{{ badge.label }}</span>
-          {% endfor %}
+          {% if paper.venue_badges and paper.venue_badges.size > 0 %}
+            {% capture venue_badge_text %}{% for badge in paper.venue_badges %}{{ badge }}{% unless forloop.last %} · {% endunless %}{% endfor %}{% endcapture %}
+            <span class="venue-badges-trigger venue-tooltip" data-tooltip="{{ venue_badge_text | strip | escape }}" aria-label="Venue rankings: {{ venue_badge_text | strip | escape }}">
+              <i class="fas fa-question-circle" aria-hidden="true"></i>
+            </span>
+          {% endif %}
         </p>
 
         {% capture rendered_links %}
