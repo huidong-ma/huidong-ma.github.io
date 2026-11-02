@@ -1,26 +1,26 @@
 # Huidong Ma's Academic Homepage
 
-使用 React、TypeScript、Vite 和 Tailwind CSS 构建的双语个人主页。
+A bilingual academic homepage built with React, TypeScript, Vite, and Tailwind CSS.
 
-## 本地预览
+## Local Development
 
-建议使用 Node.js 24 LTS。在项目根目录的 PowerShell 中运行：
+Node.js 24 LTS is recommended. Run the following commands in PowerShell from the project root:
 
 ```powershell
 npm.cmd ci
 npm.cmd run dev
 ```
 
-打开终端显示的地址，默认是 http://localhost:3000。保存修改后页面会自动更新。网站运行不需要配置 Gemini API Key。
+Open the URL shown in the terminal, usually http://localhost:3000. The page updates automatically when you save changes. No Gemini API key is required to run the website.
 
-## 编辑内容
+## Editing Content
 
-- `src/data/siteData.ts`：个人资料、论文、新闻、荣誉和服务。新闻、论文、荣誉和服务按数组顺序显示。
-- `public/papers/`：论文 PDF。
-- `public/images/`：头像等图片。
-- `public/CNAME`：自定义域名，目前为 `www.huidong.site`。
+- `src/data/siteData.ts`: Profile, publications, news, honors, and service. News, publications, honors, and service appear in their array order.
+- `public/papers/`: Publication PDFs.
+- `public/images/`: Profile photo and other images.
+- `public/CNAME`: Custom domain, currently `www.huidong.site`.
 
-## 检查与构建
+## Checking and Building
 
 ```powershell
 npm.cmd run lint
@@ -28,12 +28,12 @@ npm.cmd run build
 npm.cmd run preview
 ```
 
-`dist/` 是构建结果；`public/` 中的文件会原样复制到其中。
+The production build is generated in `dist/`. Files in `public/` are copied into the build without modification.
 
-## GitHub Pages 部署
+## GitHub Pages Deployment
 
-仓库为 `huidong-ma/huidong-ma.github.io`。在 GitHub 仓库的 Settings → Pages 中，将 Source 设为 **GitHub Actions**，保留自定义域名 `www.huidong.site`。
+The repository is `huidong-ma/huidong-ma.github.io`. In the repository's **Settings > Pages**, set **Source** to **GitHub Actions** and use `www.huidong.site` as the custom domain.
 
-推送到 `main` 分支后，`.github/workflows/deploy.yml` 会自动安装依赖、检查类型、构建并发布 `dist/`。可在仓库的 Actions 页面查看部署结果。
+Each push to `main` triggers `.github/workflows/deploy.yml`, which installs dependencies, checks TypeScript, builds the website, and deploys `dist/`. Check the repository's **Actions** tab for deployment results.
 
-提交源码、`public/`、`package-lock.json` 和部署配置；`node_modules/`、`dist/` 以及本地环境变量文件由 `.gitignore` 排除。
+Commit the source code, `public/`, `package-lock.json`, and deployment configuration. The `.gitignore` file excludes `node_modules/`, `dist/`, and local environment files.
