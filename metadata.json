@@ -1,0 +1,6 @@
+{
+  "name": "Huidong Ma",
+  "description": "Academic homepage of Huidong Ma, Ph.D. candidate at Nankai University, researching data compression, deep learning, high-performance computing, and large language models.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
