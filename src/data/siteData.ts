@@ -73,7 +73,7 @@ From September 2025 to August 2026, I was a visiting student at the College of C
 
 My research interests include **Data Compression**, **Deep Learning**, and **High-Performance Computing**. I also work on research related to **Large Language Models**, with publications at venues including CVPR, ACL, WWW, SIGKDD, and FCS.
 
-Please feel free to reach out if you are interested in my research.`,
+Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in my research.`,
     },
     cvUrl: '',
   },
