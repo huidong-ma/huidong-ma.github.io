@@ -35,7 +35,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
     : (profile.englishName || t(profile.name)).split(' ').map((n) => n[0]).join('').slice(0, 2);
 
   return (
-    <aside className="w-full lg:w-80 xl:w-84 shrink-0 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-5.5rem)] lg:overflow-y-auto custom-scrollbar">
+    <aside className="w-full lg:w-80 xl:w-84 shrink-0 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-5.5rem)] lg:overflow-x-hidden lg:overflow-y-auto custom-scrollbar">
       <div className="space-y-5 pb-6">
         {/* Profile Card with 3D Tilt and interactive spotlight */}
         <TiltCard
