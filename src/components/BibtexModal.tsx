@@ -47,7 +47,7 @@ export const BibtexModal: React.FC<BibtexModalProps> = ({
             id="bibtex-modal-title"
             className="text-base font-semibold text-slate-900 dark:text-zinc-100 line-clamp-1"
           >
-            {locale === 'zh' ? '引用格式 (BibTeX)' : 'BibTeX Citation'}
+            {locale === 'zh' ? '引用 (BibTeX)' : 'BibTeX Citation'}
           </h3>
           <button
             type="button"
@@ -78,12 +78,12 @@ export const BibtexModal: React.FC<BibtexModalProps> = ({
             {copied ? (
               <>
                 <Check className="w-3.5 h-3.5" />
-                <span>{locale === 'zh' ? '已复制到剪贴板' : 'Copied!'}</span>
+                <span>{locale === 'zh' ? '已复制' : 'Copied'}</span>
               </>
             ) : (
               <>
                 <Copy className="w-3.5 h-3.5" />
-                <span>{locale === 'zh' ? '复制 BibTeX' : 'Copy BibTeX'}</span>
+                <span>{locale === 'zh' ? '复制' : 'Copy'}</span>
               </>
             )}
           </button>

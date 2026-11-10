@@ -320,7 +320,7 @@ export const PublicationList: React.FC<PublicationListProps> = ({
                       className={actionBtnClass}
                     >
                       <Quote className="w-3 h-3" />
-                      <span>{locale === 'zh' ? '引用' : 'BibTeX'}</span>
+                      <span>{locale === 'zh' ? '引用' : 'Cite'}</span>
                     </button>
                   )}
                 </div>

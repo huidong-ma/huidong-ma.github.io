@@ -85,12 +85,12 @@ export const AbstractModal: React.FC<AbstractModalProps> = ({
             {copied ? (
               <>
                 <Check className="w-3.5 h-3.5" />
-                <span>{locale === 'zh' ? '已复制摘要' : 'Copied!'}</span>
+                <span>{locale === 'zh' ? '已复制' : 'Copied'}</span>
               </>
             ) : (
               <>
                 <Copy className="w-3.5 h-3.5" />
-                <span>{locale === 'zh' ? '复制摘要' : 'Copy Abstract'}</span>
+                <span>{locale === 'zh' ? '复制' : 'Copy'}</span>
               </>
             )}
           </button>
