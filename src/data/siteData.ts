@@ -843,6 +843,9 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
   ],
 
   // 11. 相册专辑 (每一行为一个专辑，包含封面及专辑内系列照片，支持灯箱大图及多模式浏览)
+  // 提示：所有专辑照片推荐统一存放在 public/images/albums/[专辑ID]/ 目录下，
+  // 例如：public/images/albums/singapore-journey/cover.jpg
+  // 维护方式：新建专辑只需在 public/images/albums/ 下新建文件夹并放入图片，直接在下方填写路径即可。
   albums: [
     {
       id: 'singapore-journey',
@@ -858,7 +861,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
         zh: '赴新加坡学术交流期间记录的城市光影与南洋人文景观。',
         en: 'Urban moments and architectural wonders captured during academic exchange in Singapore.',
       },
-      coverImage: '/src/assets/images/singapore_mbs_sands_1794318864972.jpg',
+      coverImage: '/images/albums/singapore-journey/cover.jpg',
       coverTitle: {
         zh: '滨海湾金沙与静谧海湾天际线',
         en: 'Marina Bay Sands & Twilight Skyline',
@@ -884,7 +887,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '鱼尾狮与滨海湾晚霞',
             en: 'Merlion & Marina Bay Sunset',
           },
-          imageUrl: '/src/assets/images/singapore_merlion_1794318863842.jpg',
+          imageUrl: '/images/albums/singapore-journey/merlion.jpg',
           location: {
             zh: '新加坡 · 鱼尾狮公园',
             en: 'Merlion Park, Singapore',
@@ -901,7 +904,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '滨海湾花园超级树丛',
             en: 'Gardens by the Bay Supertrees',
           },
-          imageUrl: '/src/assets/images/singapore_gardens_supertrees_1794318865366.jpg',
+          imageUrl: '/images/albums/singapore-journey/gardens-supertrees.jpg',
           location: {
             zh: '新加坡 · 滨海湾花园',
             en: 'Gardens by the Bay, Singapore',
@@ -918,7 +921,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '星耀樟宜雨旋涡室内瀑布',
             en: 'Jewel Changi Rain Vortex',
           },
-          imageUrl: '/src/assets/images/singapore_jewel_changi_1794364651884.jpg',
+          imageUrl: '/images/albums/singapore-journey/jewel-changi.jpg',
           location: {
             zh: '新加坡 · 樟宜机场',
             en: 'Jewel Changi, Singapore',
@@ -935,7 +938,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '圣淘沙跨海缆车与热带海湾',
             en: 'Sentosa Cable Car & Tropical Sea',
           },
-          imageUrl: '/src/assets/images/singapore_sentosa_bay_1794366349419.jpg',
+          imageUrl: '/images/albums/singapore-journey/sentosa-bay.jpg',
           location: {
             zh: '新加坡 · 圣淘沙岛',
             en: 'Sentosa Island, Singapore',
@@ -952,7 +955,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '克拉码头新加坡河畔夜色',
             en: 'Clarke Quay Singapore River at Dusk',
           },
-          imageUrl: '/src/assets/images/singapore_clarke_quay_1794366349912.jpg',
+          imageUrl: '/images/albums/singapore-journey/clarke-quay.jpg',
           location: {
             zh: '新加坡 · 克拉码头',
             en: 'Clarke Quay, Singapore',
@@ -979,7 +982,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
         zh: '参与前沿学术会议（CVPR、AAAI、KDD、WWW等），在国际学术舞台分享数据压缩与深度学习科研成果。',
         en: 'Presenting research and engaging with the global computer science community at leading venues.',
       },
-      coverImage: '/src/assets/images/academic_conference_keynote_1794318865266.jpg',
+      coverImage: '/images/albums/academic-conferences/cover.jpg',
       coverTitle: {
         zh: '国际学术会议学术报告与研讨',
         en: 'Conference Keynote & Research Presentation',
@@ -1005,7 +1008,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '学术研讨海报与学者深入交流',
             en: 'Conference Poster Session & Discussion',
           },
-          imageUrl: '/src/assets/images/academic_conference_poster_1794364653911.jpg',
+          imageUrl: '/images/albums/academic-conferences/poster-session.jpg',
           location: {
             zh: '会议论文展厅',
             en: 'Conference Poster Hall',
@@ -1022,7 +1025,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '国际学术研讨会圆桌前沿论坛',
             en: 'Symposium Panel Discussion & Perspectives',
           },
-          imageUrl: '/src/assets/images/academic_panel_session_1794366352024.jpg',
+          imageUrl: '/images/albums/academic-conferences/panel-session.jpg',
           location: {
             zh: '前沿研讨会圆桌主厅',
             en: 'Main Symposium Panel Hall',
@@ -1039,7 +1042,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '会议举办城市与现代建筑风物',
             en: 'Host City & Modern Architectural Lines',
           },
-          imageUrl: '/src/assets/images/gallery_urban_architecture_1793179531371.jpg',
+          imageUrl: '/images/albums/academic-conferences/urban-architecture.jpg',
           location: {
             zh: '学术会议举办城市',
             en: 'Host City Architecture',
@@ -1056,7 +1059,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '国际学术会议学术交流与成果表彰',
             en: 'International Conference Presentation & Honor',
           },
-          imageUrl: '/src/assets/images/academic_award_ceremony_1794366604440.jpg',
+          imageUrl: '/images/albums/academic-conferences/award-ceremony.jpg',
           location: {
             zh: '大会学术荣誉典礼',
             en: 'Conference Honors Ceremony',
@@ -1073,7 +1076,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '南开大学实验室研究组算法研讨论证',
             en: 'Nankai University Lab Research & Algorithmic Discussion',
           },
-          imageUrl: '/src/assets/images/academic_lab_collaboration_1794366605092.jpg',
+          imageUrl: '/images/albums/academic-conferences/lab-collaboration.jpg',
           location: {
             zh: '计算机学院研究实验室',
             en: 'CS Research Lab, Nankai University',
@@ -1100,7 +1103,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
         zh: '沉潜于南开求索真知，闲暇登高远眺，在攀登与阅读中感受沉静充实的生活韵律。',
         en: 'Scholarly dedication at Nankai University paired with mountain vistas and natural reflections.',
       },
-      coverImage: '/src/assets/images/nankai_campus_building_1794364652595.jpg',
+      coverImage: '/images/albums/campus-moments/cover.jpg',
       coverTitle: {
         zh: '南开大学主楼与校园晨曦',
         en: 'Nankai Main Building & Morning Path',
@@ -1126,7 +1129,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '南开园春日繁花与湖畔新翠',
             en: 'Spring Blossoms & Lakeside at Nankai',
           },
-          imageUrl: '/src/assets/images/nankai_spring_cherry_1794366605386.jpg',
+          imageUrl: '/images/albums/campus-moments/spring-cherry.jpg',
           location: {
             zh: '南开大学校园水上区',
             en: 'Nankai Campus Lake Promenade',
@@ -1143,7 +1146,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '南开园马蹄湖夏日荷香',
             en: 'Nankai Horseshoe Lake Lotus Pond',
           },
-          imageUrl: '/src/assets/images/nankai_lotus_pond_1794366350343.jpg',
+          imageUrl: '/images/albums/campus-moments/horseshoe-lotus.jpg',
           location: {
             zh: '南开大学马蹄湖',
             en: 'Horseshoe Lake, Nankai University',
@@ -1160,7 +1163,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '南开金秋银杏大道漫步',
             en: 'Golden Ginkgo Avenue in Autumn',
           },
-          imageUrl: '/src/assets/images/nankai_autumn_ginkgo_1794366351857.jpg',
+          imageUrl: '/images/albums/campus-moments/autumn-ginkgo.jpg',
           location: {
             zh: '南开大学大中路',
             en: 'Dazhong Road, Nankai University',
@@ -1177,7 +1180,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '南开大学图书馆书香研读',
             en: 'Nankai University Library Study',
           },
-          imageUrl: '/src/assets/images/gallery_campus_library_1793179530582.jpg',
+          imageUrl: '/images/albums/campus-moments/campus-library.jpg',
           location: {
             zh: '南开大学图书馆',
             en: 'Nankai University Library',
@@ -1194,7 +1197,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
             zh: '极目远眺与行远自迩',
             en: 'Mountain Summit & Nature Horizon',
           },
-          imageUrl: '/src/assets/images/gallery_mountain_summit_1793179530717.jpg',
+          imageUrl: '/images/albums/campus-moments/mountain-summit.jpg',
           location: {
             zh: '高山之巅',
             en: 'Mountain Summit',
