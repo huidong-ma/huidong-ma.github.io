@@ -27,15 +27,10 @@ export const Gallery: React.FC<GalleryProps> = ({ albums = [], items = [] }) => 
         {
           id: 'default-album',
           title: { zh: '精选相册', en: 'Selected Moments' },
-          subtitle: { zh: '学术交流与生活掠影', en: 'Academic Exchange & Moments' },
-          description: {
-            zh: '求学研学与行迹记录',
-            en: 'Footprints of research, travels, and life.',
-          },
-          coverImage: items[0].imageUrl,
-          period: items[0].date,
           location: items[0].location,
-          photos: items.slice(1),
+          date: items[0].date,
+          coverPhotoId: items[0].id,
+          photos: items,
         },
       ];
     }
@@ -201,14 +196,14 @@ const AlbumStackedCover: React.FC<AlbumStackedCoverProps> = ({
               <span className="truncate">{t(album.location)}</span>
             </span>
           )}
-          {album.location && album.period && (
+          {album.location && album.date && (
             <span className="text-white/40" aria-hidden="true">
               ·
             </span>
           )}
-          {album.period && (
+          {album.date && (
             <span className="font-mono tabular-nums shrink-0 text-white/70">
-              {album.period}
+              {album.date}
             </span>
           )}
         </div>
@@ -228,23 +223,13 @@ interface AlbumRowProps {
 }
 
 const AlbumRow: React.FC<AlbumRowProps> = ({ album, onOpenLightbox }) => {
-  // 1. Construct the Cover Photo object
-  const coverPhotoItem: GalleryPhoto = React.useMemo(() => ({
-    id: `${album.id}-cover`,
-    imageUrl: album.coverImage,
-    title: album.coverTitle || album.title,
-    location: album.coverLocation || album.location,
-    date: album.coverDate || album.period,
-    caption: album.coverCaption || album.description,
-  }), [album]);
-
-  // 2. All photos of the album (including the original cover photo at index 0)
+  // Keep the selected cover first while reusing the original photo records.
   const allAlbumPhotos = React.useMemo(() => {
-    const otherPhotos = (album.photos || []).filter(
-      (photo) => photo.imageUrl !== album.coverImage
-    );
-    return [coverPhotoItem, ...otherPhotos];
-  }, [coverPhotoItem, album.photos, album.coverImage]);
+    const photos = album.photos || [];
+    const coverIndex = photos.findIndex((photo) => photo.id === album.coverPhotoId);
+    if (coverIndex <= 0) return photos;
+    return [photos[coverIndex], ...photos.slice(0, coverIndex), ...photos.slice(coverIndex + 1)];
+  }, [album.photos, album.coverPhotoId]);
 
   return (
     <div className="group relative rounded-2xl border-0 bg-white/85 dark:bg-zinc-900/85 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06),0_2px_6px_-2px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.45),0_2px_6px_-2px_rgba(0,0,0,0.3)] backdrop-blur-md p-3 sm:p-4 transition-all duration-300 hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.09)] dark:hover:shadow-[0_8px_34px_-4px_rgba(0,0,0,0.55)]">

@@ -848,365 +848,83 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
   // 维护方式：新建专辑只需在 public/images/albums/ 下新建文件夹并放入图片，直接在下方填写路径即可。
   albums: [
     {
-      id: 'singapore-journey',
-      title: {
-        zh: '新加坡访学行迹',
-        en: 'Singapore Journey & Footprints',
-      },
-      subtitle: {
-        zh: '狮城滨海湾、鱼尾狮与城市天际线掠影',
-        en: 'Merlion, Marina Bay Sands & Urban Skyline',
-      },
-      description: {
-        zh: '赴新加坡学术交流期间记录的城市光影与南洋人文景观。',
-        en: 'Urban moments and architectural wonders captured during academic exchange in Singapore.',
-      },
-      coverImage: '/images/albums/singapore-journey/cover.jpg',
-      coverTitle: {
-        zh: '滨海湾金沙与静谧海湾天际线',
-        en: 'Marina Bay Sands & Twilight Skyline',
-      },
-      coverLocation: {
-        zh: '新加坡 · 滨海湾金沙',
-        en: 'Marina Bay Sands, Singapore',
-      },
-      coverDate: '2025.07',
-      coverCaption: {
-        zh: '蓝调时刻海湾如镜，倒映着金沙三塔楼的壮阔轮廓与艺术科学博物馆的莲花造型。',
-        en: 'Serene blue hour reflections of Marina Bay Sands and ArtScience Museum.',
-      },
-      period: '2025',
-      location: {
-        zh: '新加坡 · 滨海湾',
-        en: 'Singapore · Marina Bay',
-      },
+      id: '202607-usa-sd',
+      title: { zh: 'ACL 2026 参会纪行', en: 'ACL 2026 Conference in San Diego' },
+      location: { zh: '美国 · 圣迭戈', en: 'San Diego, USA' },
+      date: '',
+      coverPhotoId: 'IMG_8173',
       photos: [
         {
-          id: 'sg-merlion',
-          title: {
-            zh: '鱼尾狮与滨海湾晚霞',
-            en: 'Merlion & Marina Bay Sunset',
-          },
-          imageUrl: '/images/albums/singapore-journey/merlion.jpg',
-          location: {
-            zh: '新加坡 · 鱼尾狮公园',
-            en: 'Merlion Park, Singapore',
-          },
-          date: '2025.07',
-          caption: {
-            zh: '日落时分水雾在金色余晖中升腾，帆船酒店与现代摩天大楼屹立海湾天际线。',
-            en: 'Golden hour twilight over Marina Bay with the iconic Merlion against the skyline.',
-          },
+          id: 'IMG_7541',
+          title: { zh: 'Old Town 的参天大树', en: 'A Towering Tree in Old Town' },
+          imageUrl: '/images/albums/202607-usa-sd/IMG_7541.JPG',
+          location: { zh: 'Old Town', en: 'Old Town' },
+          date: '2026.07',
+          caption: { zh: '', en: '' },
         },
         {
-          id: 'sg-gardens',
-          title: {
-            zh: '滨海湾花园超级树丛',
-            en: 'Gardens by the Bay Supertrees',
-          },
-          imageUrl: '/images/albums/singapore-journey/gardens-supertrees.jpg',
-          location: {
-            zh: '新加坡 · 滨海湾花园',
-            en: 'Gardens by the Bay, Singapore',
-          },
-          date: '2025.07',
-          caption: {
-            zh: '未来主义垂直花园在夜幕降临时璀璨点亮，热带植物与科幻建筑在此完美交融。',
-            en: 'Futuristic vertical gardens radiating evening light amidst tropical lushness.',
-          },
+          id: 'IMG_7628',
+          title: { zh: 'Fallen Star', en: 'Fallen Star' },
+          imageUrl: '/images/albums/202607-usa-sd/IMG_7628.JPG',
+          location: { zh: '加利福尼亚大学圣迭戈分校', en: 'University of California San Diego (UC San Diego)' },
+          date: '2026.07',
+          caption: { zh: '', en: '' },
         },
         {
-          id: 'sg-jewel',
-          title: {
-            zh: '星耀樟宜雨旋涡室内瀑布',
-            en: 'Jewel Changi Rain Vortex',
-          },
-          imageUrl: '/images/albums/singapore-journey/jewel-changi.jpg',
-          location: {
-            zh: '新加坡 · 樟宜机场',
-            en: 'Jewel Changi, Singapore',
-          },
-          date: '2025.07',
-          caption: {
-            zh: '巨型圆穹玻璃顶下飞流直下的水幕与叠翠繁茂的室内森林，兼具自然之美与建筑巧思。',
-            en: 'The world’s tallest indoor waterfall surrounded by lush tiered green canopy.',
-          },
+          id: 'IMG_7637',
+          title: { zh: 'The Bear', en: 'The Bear' },
+          imageUrl: '/images/albums/202607-usa-sd/IMG_7637.JPG',
+          location: { zh: '加利福尼亚大学圣迭戈分校', en: 'University of California San Diego (UC San Diego)' },
+          date: '2026.07',
+          caption: { zh: '', en: '' },
         },
         {
-          id: 'sg-sentosa',
-          title: {
-            zh: '圣淘沙跨海缆车与热带海湾',
-            en: 'Sentosa Cable Car & Tropical Sea',
-          },
-          imageUrl: '/images/albums/singapore-journey/sentosa-bay.jpg',
-          location: {
-            zh: '新加坡 · 圣淘沙岛',
-            en: 'Sentosa Island, Singapore',
-          },
-          date: '2025.07',
-          caption: {
-            zh: '俯瞰热带海岛度假胜地与穿梭于蔚蓝晴空下的跨海缆车，海天一色。',
-            en: 'Panoramic view of turquoise waters and lush islands from Sentosa Cable Car.',
-          },
+          id: 'IMG_7707',
+          title: { zh: '拉霍亚的海鸥', en: 'Seagulls in La Jolla' },
+          imageUrl: '/images/albums/202607-usa-sd/IMG_7707.JPG',
+          location: { zh: '拉霍亚', en: 'La Jolla' },
+          date: '2026.07',
+          caption: { zh: '', en: '' },
         },
         {
-          id: 'sg-clarke',
-          title: {
-            zh: '克拉码头新加坡河畔夜色',
-            en: 'Clarke Quay Singapore River at Dusk',
-          },
-          imageUrl: '/images/albums/singapore-journey/clarke-quay.jpg',
-          location: {
-            zh: '新加坡 · 克拉码头',
-            en: 'Clarke Quay, Singapore',
-          },
-          date: '2025.07',
-          caption: {
-            zh: '傍晚河畔灯火阑珊，彩色历史骑楼与静水倒影构成南洋风情的繁华夜景。',
-            en: 'Vibrant riverside heritage shophouses and dining quays reflected on Singapore River.',
-          },
-        },
-      ],
-    },
-    {
-      id: 'academic-conferences',
-      title: {
-        zh: '学术会议与研讨交流',
-        en: 'Academic Conferences & Keynotes',
-      },
-      subtitle: {
-        zh: '国际顶级学术盛会特邀报告与学者交流',
-        en: 'International presentations, keynotes, and academic dialogue',
-      },
-      description: {
-        zh: '参与前沿学术会议（CVPR、AAAI、KDD、WWW等），在国际学术舞台分享数据压缩与深度学习科研成果。',
-        en: 'Presenting research and engaging with the global computer science community at leading venues.',
-      },
-      coverImage: '/images/albums/academic-conferences/cover.jpg',
-      coverTitle: {
-        zh: '国际学术会议学术报告与研讨',
-        en: 'Conference Keynote & Research Presentation',
-      },
-      coverLocation: {
-        zh: '大会主报告厅',
-        en: 'Main Auditorium',
-      },
-      coverDate: '2025.08',
-      coverCaption: {
-        zh: '在国际学术会议千人主会场分享大规模数据无损压缩与深度学习前沿进展。',
-        en: 'Sharing advances on large-scale data compression and neural models.',
-      },
-      period: '2024 - 2026',
-      location: {
-        zh: '国际学术会议现场',
-        en: 'Global Conference Venues',
-      },
-      photos: [
-        {
-          id: 'ac-poster',
-          title: {
-            zh: '学术研讨海报与学者深入交流',
-            en: 'Conference Poster Session & Discussion',
-          },
-          imageUrl: '/images/albums/academic-conferences/poster-session.jpg',
-          location: {
-            zh: '会议论文展厅',
-            en: 'Conference Poster Hall',
-          },
-          date: '2025.08',
-          caption: {
-            zh: '与来自世界各地的同行学者围聚研讨，深入探讨算法创新与实验评测细节。',
-            en: 'Engaging discussions with global peers around research findings and architecture.',
-          },
+          id: 'IMG_7725',
+          title: { zh: '拉霍亚的海滩', en: 'Beach in La Jolla' },
+          imageUrl: '/images/albums/202607-usa-sd/IMG_7725.JPG',
+          location: { zh: '拉霍亚', en: 'La Jolla' },
+          date: '2026.07',
+          caption: { zh: '', en: '' },
         },
         {
-          id: 'ac-panel',
-          title: {
-            zh: '国际学术研讨会圆桌前沿论坛',
-            en: 'Symposium Panel Discussion & Perspectives',
-          },
-          imageUrl: '/images/albums/academic-conferences/panel-session.jpg',
-          location: {
-            zh: '前沿研讨会圆桌主厅',
-            en: 'Main Symposium Panel Hall',
-          },
-          date: '2025.08',
-          caption: {
-            zh: '受邀参与前沿学术圆桌对话，共议深度学习模型演进与大规模系统优化方向。',
-            en: 'Expert panel exploring neural architectures, efficiency, and future research directions.',
-          },
+          id: 'IMG_7747',
+          title: { zh: 'Ellen Browning Scripps Park', en: 'Ellen Browning Scripps Park' },
+          imageUrl: '/images/albums/202607-usa-sd/IMG_7747.JPG',
+          location: { zh: '拉霍亚', en: 'La Jolla' },
+          date: '2026.07',
+          caption: { zh: '', en: '' },
         },
         {
-          id: 'ac-urban',
-          title: {
-            zh: '会议举办城市与现代建筑风物',
-            en: 'Host City & Modern Architectural Lines',
-          },
-          imageUrl: '/images/albums/academic-conferences/urban-architecture.jpg',
-          location: {
-            zh: '学术会议举办城市',
-            en: 'Host City Architecture',
-          },
-          date: '2025.06',
-          caption: {
-            zh: '研学间隙漫步城市街区，几何光影与流线建筑构筑出宁静的思辨空间。',
-            en: 'Urban geometry and modern lines captured during conference study breaks.',
-          },
+          id: 'IMG_7764',
+          title: { zh: 'Ellen Browning Scripps Park', en: 'Ellen Browning Scripps Park' },
+          imageUrl: '/images/albums/202607-usa-sd/IMG_7764.JPG',
+          location: { zh: '拉霍亚', en: 'La Jolla' },
+          date: '2026.07',
+          caption: { zh: '', en: '' },
         },
         {
-          id: 'ac-award',
-          title: {
-            zh: '国际学术会议学术交流与成果表彰',
-            en: 'International Conference Presentation & Honor',
-          },
-          imageUrl: '/images/albums/academic-conferences/award-ceremony.jpg',
-          location: {
-            zh: '大会学术荣誉典礼',
-            en: 'Conference Honors Ceremony',
-          },
-          date: '2025.07',
-          caption: {
-            zh: '在国际学术会议上作成果汇报并获学者热烈反响，见证科研工作的阶段性认可。',
-            en: 'Receiving recognition and sharing research breakthroughs on international stage.',
-          },
+          id: 'IMG_7979',
+          title: { zh: '码头夜景', en: 'Pier at Night' },
+          imageUrl: '/images/albums/202607-usa-sd/IMG_7979.JPG',
+          location: { zh: '克罗拉多轮渡', en: 'Coronado Ferry' },
+          date: '2026.07',
+          caption: { zh: '', en: '' },
         },
         {
-          id: 'ac-lab',
-          title: {
-            zh: '南开大学实验室研究组算法研讨论证',
-            en: 'Nankai University Lab Research & Algorithmic Discussion',
-          },
-          imageUrl: '/images/albums/academic-conferences/lab-collaboration.jpg',
-          location: {
-            zh: '计算机学院研究实验室',
-            en: 'CS Research Lab, Nankai University',
-          },
-          date: '2025.04',
-          caption: {
-            zh: '与实验室导师及同组研究生围绕神经网络数据压缩与模型量化方案展开深入研讨。',
-            en: 'Collaborative discussion on neural data compression architectures and pruning.',
-          },
-        },
-      ],
-    },
-    {
-      id: 'campus-moments',
-      title: {
-        zh: '南开园风物与求索行记',
-        en: 'Campus Moments & Life Footprints',
-      },
-      subtitle: {
-        zh: '南开园沉潜研学、书香静思与登高涉远',
-        en: 'Quiet library study at Nankai, balanced with outdoor journeys',
-      },
-      description: {
-        zh: '沉潜于南开求索真知，闲暇登高远眺，在攀登与阅读中感受沉静充实的生活韵律。',
-        en: 'Scholarly dedication at Nankai University paired with mountain vistas and natural reflections.',
-      },
-      coverImage: '/images/albums/campus-moments/cover.jpg',
-      coverTitle: {
-        zh: '南开大学主楼与校园晨曦',
-        en: 'Nankai Main Building & Morning Path',
-      },
-      coverLocation: {
-        zh: '南开大学八里台校区',
-        en: 'Nankai Balitai Campus',
-      },
-      coverDate: '2024.10',
-      coverCaption: {
-        zh: '晨曦映照下的庄重校舍与碧柳清池，见证数载研思求索。',
-        en: 'Morning sun over the historic university building and willow-lined walkways.',
-      },
-      period: '2023 - 2026',
-      location: {
-        zh: '南开大学 · 天津',
-        en: 'Nankai University · Tianjin',
-      },
-      photos: [
-        {
-          id: 'cm-cherry',
-          title: {
-            zh: '南开园春日繁花与湖畔新翠',
-            en: 'Spring Blossoms & Lakeside at Nankai',
-          },
-          imageUrl: '/images/albums/campus-moments/spring-cherry.jpg',
-          location: {
-            zh: '南开大学校园水上区',
-            en: 'Nankai Campus Lake Promenade',
-          },
-          date: '2025.04',
-          caption: {
-            zh: '春日南开园繁花似锦，粉樱与嫩柳倒映在明澈湖面，充满蓬勃生机。',
-            en: 'Spring cherry blossoms and tender willows framing the serene Nankai campus lake.',
-          },
-        },
-        {
-          id: 'cm-lotus',
-          title: {
-            zh: '南开园马蹄湖夏日荷香',
-            en: 'Nankai Horseshoe Lake Lotus Pond',
-          },
-          imageUrl: '/images/albums/campus-moments/horseshoe-lotus.jpg',
-          location: {
-            zh: '南开大学马蹄湖',
-            en: 'Horseshoe Lake, Nankai University',
-          },
-          date: '2024.07',
-          caption: {
-            zh: '盛夏荷叶田田，粉荷竞放，清澈水面映照古雅红砖学府。',
-            en: 'Summer lotus blooms in full splendor across the historic Nankai campus lake.',
-          },
-        },
-        {
-          id: 'cm-ginkgo',
-          title: {
-            zh: '南开金秋银杏大道漫步',
-            en: 'Golden Ginkgo Avenue in Autumn',
-          },
-          imageUrl: '/images/albums/campus-moments/autumn-ginkgo.jpg',
-          location: {
-            zh: '南开大学大中路',
-            en: 'Dazhong Road, Nankai University',
-          },
-          date: '2024.11',
-          caption: {
-            zh: '秋风吹拂满目金黄，落叶铺就静谧小径，学子步履从容。',
-            en: 'Golden autumn ginkgo canopy framing historic campus brick walkways.',
-          },
-        },
-        {
-          id: 'cm-library',
-          title: {
-            zh: '南开大学图书馆书香研读',
-            en: 'Nankai University Library Study',
-          },
-          imageUrl: '/images/albums/campus-moments/campus-library.jpg',
-          location: {
-            zh: '南开大学图书馆',
-            en: 'Nankai University Library',
-          },
-          date: '2024.11',
-          caption: {
-            zh: '晨光倾洒在静谧的书桌前，沉浸于论文研读与算法推导的充实时光。',
-            en: 'Soft morning light in the quiet study halls of Nankai University.',
-          },
-        },
-        {
-          id: 'cm-summit',
-          title: {
-            zh: '极目远眺与行远自迩',
-            en: 'Mountain Summit & Nature Horizon',
-          },
-          imageUrl: '/images/albums/campus-moments/mountain-summit.jpg',
-          location: {
-            zh: '高山之巅',
-            en: 'Mountain Summit',
-          },
-          date: '2024.05',
-          caption: {
-            zh: '登临绝顶，云海翻涌，求学求索之路亦如攀登险峰，步履不停。',
-            en: 'Standing above the clouds on the summit ridge, reflecting on the journey of discovery.',
-          },
+          id: 'IMG_8173',
+          title: { zh: '中途岛号俯瞰', en: 'View from the USS Midway' },
+          imageUrl: '/images/albums/202607-usa-sd/IMG_8173.JPG',
+          location: { zh: '中途岛号博物馆', en: 'USS Midway Museum' },
+          date: '2026.07',
+          caption: { zh: '', en: '' },
         },
       ],
     },

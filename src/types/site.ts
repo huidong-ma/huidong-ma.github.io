@@ -128,15 +128,9 @@ export interface GalleryPhoto {
 export interface GalleryAlbum {
   id: string;
   title: LocalizedText;
-  subtitle?: LocalizedText;
-  description?: LocalizedText;
-  coverImage: string;
-  coverTitle?: LocalizedText;
-  coverLocation?: LocalizedText;
-  coverDate?: string;
-  coverCaption?: LocalizedText;
-  period?: string;
   location?: LocalizedText;
+  date?: string;
+  coverPhotoId: string;
   photos: GalleryPhoto[];
 }
 
