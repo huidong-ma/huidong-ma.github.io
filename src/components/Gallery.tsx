@@ -90,9 +90,137 @@ export const Gallery: React.FC<GalleryProps> = ({ albums = [], items = [] }) => 
 };
 
 // ============================================================================
+// ============================================================================
+// Multi-Photo Stacked Album Cover
+// - Artistically composed of real photographs from the album (Paper Print Stack)
+// - Layer 3 (-9° left tilt), Layer 2 (+8° right tilt), Layer 1 (-1.5° hero tilt)
+// - Interactive hover fan-out: photos smoothly spread apart revealing album glimpses
+// - Gradient scrim at bottom with Album Title, Location, and Date
+// - Equal dimensions: h-48 md:h-44 lg:h-48 aspect-[4/3] matching right-side carousel
+// ============================================================================
+interface AlbumStackedCoverProps {
+  album: GalleryAlbum;
+  photos: GalleryPhoto[];
+  onOpenCover: () => void;
+}
+
+const AlbumStackedCover: React.FC<AlbumStackedCoverProps> = ({
+  album,
+  photos,
+  onOpenCover,
+}) => {
+  const { t, locale } = useLanguage();
+
+  // Distinct photo layers from the album
+  // Hero (front): photos[0] (signature shot)
+  // Layer 2 (back-right): photos[1]
+  // Layer 3 (back-left): photos[2]
+  // Layer 4 (deep background peek): photos[3]
+  const heroPhoto = photos[0] || null;
+  const rightPhoto = photos.length > 1 ? photos[1] : heroPhoto;
+  const leftPhoto = photos.length > 2 ? photos[2] : (photos.length > 1 ? photos[1] : heroPhoto);
+  const backPhoto = photos.length > 3 ? photos[3] : null;
+  const totalCount = photos.length;
+
+  return (
+    <div
+      onClick={onOpenCover}
+      className="cursor-pointer relative w-full sm:w-auto h-48 md:h-44 lg:h-48 aspect-[4/3] shrink-0 rounded-xl overflow-hidden bg-gradient-to-br from-slate-200/90 via-slate-100 to-slate-200/80 dark:from-zinc-900 dark:via-zinc-850 dark:to-zinc-950 shadow-[0_4px_16px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:ring-white/10 transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.6)] group/cover select-none"
+      title={t(album.title)}
+    >
+      {/* Background Soft Texture and Ambient Glow */}
+      <div className="absolute inset-0 bg-radial from-transparent via-black/[0.02] to-black/[0.08] dark:to-black/35 pointer-events-none" />
+
+      {/* Layer 4: Deep Background Peek (if 4+ photos exist) */}
+      {backPhoto && (
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[68%] rotate-1 group-hover/cover:-translate-y-[74%] group-hover/cover:rotate-2 transition-all duration-500 ease-out w-[62%] aspect-[4/3] rounded-lg overflow-hidden p-1 bg-white/90 dark:bg-zinc-800/90 shadow-md ring-1 ring-black/5 dark:ring-white/10 opacity-60 group-hover/cover:opacity-80">
+          <ImageWithFallback
+            src={backPhoto.imageUrl}
+            alt=""
+            className="w-full h-full object-cover rounded-md pointer-events-none select-none brightness-[0.9]"
+          />
+        </div>
+      )}
+
+      {/* Layer 3: Back-Left Photo Card (Angles left, fans out further on hover) */}
+      {leftPhoto && (
+        <div className="absolute left-1/2 top-1/2 -translate-x-[64%] -translate-y-[58%] -rotate-9 group-hover/cover:-rotate-14 group-hover/cover:-translate-x-[70%] group-hover/cover:-translate-y-[62%] transition-all duration-500 ease-out w-[68%] aspect-[4/3] rounded-lg overflow-hidden p-1 bg-white/95 dark:bg-zinc-800/95 shadow-[0_4px_14px_rgba(0,0,0,0.16)] dark:shadow-[0_6px_18px_rgba(0,0,0,0.55)] ring-1 ring-black/5 dark:ring-white/10 opacity-75 group-hover/cover:opacity-95">
+          <ImageWithFallback
+            src={leftPhoto.imageUrl}
+            alt=""
+            className="w-full h-full object-cover rounded-md pointer-events-none select-none brightness-[0.92] group-hover/cover:brightness-100 transition-all"
+          />
+        </div>
+      )}
+
+      {/* Layer 2: Back-Right Photo Card (Angles right, fans out further on hover) */}
+      {rightPhoto && (
+        <div className="absolute left-1/2 top-1/2 -translate-x-[36%] -translate-y-[54%] rotate-8 group-hover/cover:rotate-13 group-hover/cover:-translate-x-[30%] group-hover/cover:-translate-y-[58%] transition-all duration-500 ease-out w-[68%] aspect-[4/3] rounded-lg overflow-hidden p-1 bg-white/95 dark:bg-zinc-800/95 shadow-[0_6px_16px_rgba(0,0,0,0.18)] dark:shadow-[0_8px_22px_rgba(0,0,0,0.6)] ring-1 ring-black/5 dark:ring-white/10 opacity-80 group-hover/cover:opacity-95">
+          <ImageWithFallback
+            src={rightPhoto.imageUrl}
+            alt=""
+            className="w-full h-full object-cover rounded-md pointer-events-none select-none brightness-[0.94] group-hover/cover:brightness-100 transition-all"
+          />
+        </div>
+      )}
+
+      {/* Layer 1: Front Hero Signature Photo Card (Prism / Fine-art border) */}
+      {heroPhoto && (
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[46%] -rotate-1.5 group-hover/cover:rotate-0 group-hover/cover:scale-[1.03] transition-all duration-500 ease-out w-[76%] aspect-[4/3] rounded-lg overflow-hidden p-1.5 bg-white dark:bg-zinc-800 shadow-[0_10px_24px_-4px_rgba(0,0,0,0.28)] dark:shadow-[0_12px_28px_rgba(0,0,0,0.7)] ring-1 ring-black/10 dark:ring-white/15 z-20">
+          <ImageWithFallback
+            src={heroPhoto.imageUrl}
+            alt={t(album.title)}
+            className="w-full h-full object-cover rounded-md pointer-events-none select-none transition-transform duration-500 ease-out group-hover/cover:scale-104"
+          />
+        </div>
+      )}
+
+      {/* Top Floating Badge: Stacked Pill indicating album & photo count */}
+      <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white/95 text-[10px] font-medium tracking-wide z-30 pointer-events-none shadow-xs border border-white/10">
+        <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+        <span>
+          {locale === 'zh' ? `${totalCount} 张全辑` : `${totalCount} Photos`}
+        </span>
+      </div>
+
+      {/* Top Right Hover Zoom Icon */}
+      <div className="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-black/50 backdrop-blur-md text-white/95 flex items-center justify-center opacity-0 group-hover/cover:opacity-100 transition-opacity pointer-events-none z-30 border border-white/10">
+        <Maximize2 className="w-3.5 h-3.5" />
+      </div>
+
+      {/* Bottom Gradient Scrim & Information */}
+      <div className="absolute inset-x-0 bottom-0 p-3 pt-12 bg-gradient-to-t from-black/92 via-black/60 to-transparent flex flex-col justify-end text-white pointer-events-none z-30">
+        <h3 className="text-xs sm:text-sm font-bold tracking-tight text-white drop-shadow-xs line-clamp-1 group-hover/cover:text-blue-300 transition-colors">
+          {t(album.title)}
+        </h3>
+
+        <div className="flex items-center gap-1.5 mt-0.5 text-[11px] text-white/80">
+          {album.location && (
+            <span className="inline-flex items-center gap-0.5 truncate">
+              <MapPin className="w-2.5 h-2.5 text-red-400 shrink-0" />
+              <span className="truncate">{t(album.location)}</span>
+            </span>
+          )}
+          {album.location && album.period && (
+            <span className="text-white/40" aria-hidden="true">
+              ·
+            </span>
+          )}
+          {album.period && (
+            <span className="font-mono tabular-nums shrink-0 text-white/70">
+              {album.period}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
 // Single Album Row Component
-// Left: Album Cover with text overlay ALWAYS visible at bottom
-// Right: 3D Stacked Cover Flow Carousel (Interactive Drag & Click to Enlarge)
+// Left: Multi-Photo Stacked Cover (Artistic Polaroid/Print fan-out composite)
+// Right: 3D Stacked Cover Flow Carousel (Contains ALL photos including cover)
 // ============================================================================
 interface AlbumRowProps {
   album: GalleryAlbum;
@@ -100,9 +228,7 @@ interface AlbumRowProps {
 }
 
 const AlbumRow: React.FC<AlbumRowProps> = ({ album, onOpenLightbox }) => {
-  const { t, locale } = useLanguage();
-
-  // 1. Construct the Cover Photo object (Photo #0 in Lightbox)
+  // 1. Construct the Cover Photo object
   const coverPhotoItem: GalleryPhoto = React.useMemo(() => ({
     id: `${album.id}-cover`,
     imageUrl: album.coverImage,
@@ -112,80 +238,35 @@ const AlbumRow: React.FC<AlbumRowProps> = ({ album, onOpenLightbox }) => {
     caption: album.coverCaption || album.description,
   }), [album]);
 
-  // 2. The Right-hand Photo Column excludes the cover picture
-  const photosInColumn = React.useMemo(() => {
-    return (album.photos || []).filter(
+  // 2. All photos of the album (including the original cover photo at index 0)
+  const allAlbumPhotos = React.useMemo(() => {
+    const otherPhotos = (album.photos || []).filter(
       (photo) => photo.imageUrl !== album.coverImage
     );
-  }, [album.photos, album.coverImage]);
-
-  // 3. Complete set of photos for the album in Lightbox (Cover is photo #0)
-  const allAlbumPhotos = React.useMemo(() => {
-    return [coverPhotoItem, ...photosInColumn];
-  }, [coverPhotoItem, photosInColumn]);
-
-  const totalAlbumPhotosCount = allAlbumPhotos.length;
+    return [coverPhotoItem, ...otherPhotos];
+  }, [coverPhotoItem, album.photos, album.coverImage]);
 
   return (
     <div className="group relative rounded-2xl border-0 bg-white/85 dark:bg-zinc-900/85 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06),0_2px_6px_-2px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_-4px_rgba(0,0,0,0.45),0_2px_6px_-2px_rgba(0,0,0,0.3)] backdrop-blur-md p-3 sm:p-4 transition-all duration-300 hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.09)] dark:hover:shadow-[0_8px_34px_-4px_rgba(0,0,0,0.55)]">
       <div className="flex flex-col md:flex-row gap-3.5 sm:gap-4 items-center">
         {/* ================================================================ */}
-        {/* LEFT: 专辑封面 (文字常显在图片内底部，等高设计)                   */}
+        {/* LEFT: 艺术多图堆叠封面 (由专辑内相片有机叠构，悬停扇形散开)        */}
         {/* ================================================================ */}
-        <div
-          onClick={() => onOpenLightbox(allAlbumPhotos, 0)}
-          className="cursor-pointer relative w-full sm:w-auto h-48 md:h-44 lg:h-48 aspect-[4/3] shrink-0 rounded-xl overflow-hidden bg-slate-100 dark:bg-zinc-800 shadow-[0_2px_10px_rgba(0,0,0,0.06)] dark:shadow-[0_2px_12px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-[1.01] group/cover select-none"
-          title={t(album.title)}
-        >
-          {/* Cover Image */}
-          <ImageWithFallback
-            src={album.coverImage}
-            alt={t(album.title)}
-            className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover/cover:scale-108"
-          />
-
-          {/* Top Hover Zoom Icon */}
-          <div className="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-black/45 backdrop-blur-xs text-white/90 flex items-center justify-center opacity-0 group-hover/cover:opacity-100 transition-opacity pointer-events-none z-10">
-            <Maximize2 className="w-3.5 h-3.5" />
-          </div>
-
-          {/* 专辑文字信息：常显在图片内底部 (Always Visible Bottom Scrim) */}
-          <div className="absolute inset-x-0 bottom-0 p-3 pt-12 bg-gradient-to-t from-black/90 via-black/55 to-transparent flex flex-col justify-end text-white pointer-events-none">
-            <h3 className="text-xs sm:text-sm font-bold tracking-tight text-white drop-shadow-xs line-clamp-1 group-hover/cover:text-blue-300 transition-colors">
-              {t(album.title)}
-            </h3>
-
-            {/* Unboxed Metadata (Location & Date) */}
-            <div className="flex items-center gap-1.5 mt-0.5 text-[11px] text-white/80">
-              {album.location && (
-                <span className="inline-flex items-center gap-0.5 truncate">
-                  <MapPin className="w-2.5 h-2.5 text-red-400 shrink-0" />
-                  <span className="truncate">{t(album.location)}</span>
-                </span>
-              )}
-              {album.location && album.period && (
-                <span className="text-white/40" aria-hidden="true">
-                  ·
-                </span>
-              )}
-              {album.period && (
-                <span className="font-mono tabular-nums shrink-0 text-white/70">
-                  {album.period}
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
+        <AlbumStackedCover
+          album={album}
+          photos={allAlbumPhotos}
+          onOpenCover={() => onOpenLightbox(allAlbumPhotos, 0)}
+        />
 
         {/* Vertical Hairline Divider on Desktop */}
         <div className="hidden md:block w-px self-stretch bg-slate-200/60 dark:bg-zinc-800/60 my-0.5" />
 
         {/* ================================================================ */}
-        {/* RIGHT: 照片堆叠动画区域 (两边堆叠，越往中间越大，可左滑右滑，单点放大) */}
+        {/* RIGHT: 照片堆叠动画区域 (包含原本的专辑照片与全辑所有相片)       */}
         {/* ================================================================ */}
         <div className="relative flex-1 min-w-0 w-full h-48 md:h-44 lg:h-48 flex items-center justify-center">
           <StackedPhotoCarousel
-            photos={photosInColumn}
+            photos={allAlbumPhotos}
             allAlbumPhotos={allAlbumPhotos}
             onOpenLightbox={onOpenLightbox}
           />
@@ -195,14 +276,6 @@ const AlbumRow: React.FC<AlbumRowProps> = ({ album, onOpenLightbox }) => {
   );
 };
 
-// ============================================================================
-// 3D Stacked Cover Flow Carousel
-// - 1:1 Real-time continuous scrubbing during drag & quick flick support
-// - Left drag reveals right photo; Right drag reveals left photo
-// - On mouse/touch release, snaps to whichever card is closest to the center line
-// - Single click on center card reliably opens LightboxModal
-// - Single click on left/right side cards smoothly flips and centers that card
-// - Clicking pagination dots directly jumps to that card
 // ============================================================================
 // 3D Stacked Cover Flow Carousel
 // - Height strictly matches album cover: h-48 md:h-44 lg:h-48 aspect-[4/3]
@@ -391,7 +464,7 @@ const StackedPhotoCarousel: React.FC<StackedPhotoCarouselProps> = ({
 
     if (index === activeIndex) {
       // 1. Single click on center card -> Open LightboxModal
-      onOpenLightbox(allAlbumPhotos, activeIndex + 1);
+      onOpenLightbox(allAlbumPhotos, index);
     } else {
       // 2. Single click on left or right side card -> Smoothly flip and bring it to center
       setAnimDuration('0.55s');
