@@ -109,7 +109,7 @@ const MainContent: React.FC = () => {
     }
 
     // 10. Gallery
-    if (isSectionVisible('gallery', Boolean(siteData.gallery && siteData.gallery.length > 0))) {
+    if (isSectionVisible('gallery', Boolean((siteData.albums && siteData.albums.length > 0) || (siteData.gallery && siteData.gallery.length > 0)))) {
       items.push({
         id: 'gallery',
         label: locale === 'zh' ? '相册足迹' : 'Gallery',
@@ -305,14 +305,14 @@ const MainContent: React.FC = () => {
             )}
 
             {/* 10. Gallery */}
-            {isSectionVisible('gallery', Boolean(siteData.gallery && siteData.gallery.length > 0)) && (
+            {isSectionVisible('gallery', Boolean((siteData.albums && siteData.albums.length > 0) || (siteData.gallery && siteData.gallery.length > 0))) && (
               <ScrollReveal delay={0.05}>
                 <Section
                   id="gallery"
                   title={locale === 'zh' ? '相册足迹' : 'Gallery & Moments'}
-                  count={siteData.gallery!.length}
+                  count={siteData.albums ? siteData.albums.length : (siteData.gallery ? siteData.gallery.length : 0)}
                 >
-                  <Gallery items={siteData.gallery!} />
+                  <Gallery albums={siteData.albums} items={siteData.gallery} />
                 </Section>
               </ScrollReveal>
             )}

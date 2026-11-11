@@ -842,7 +842,372 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
     },
   ],
 
-  // 11. 相册 (支持高分辨率灯箱查看、时间和地点展示)
+  // 11. 相册专辑 (每一行为一个专辑，包含封面及专辑内系列照片，支持灯箱大图及多模式浏览)
+  albums: [
+    {
+      id: 'singapore-journey',
+      title: {
+        zh: '新加坡访学行迹',
+        en: 'Singapore Journey & Footprints',
+      },
+      subtitle: {
+        zh: '狮城滨海湾、鱼尾狮与城市天际线掠影',
+        en: 'Merlion, Marina Bay Sands & Urban Skyline',
+      },
+      description: {
+        zh: '赴新加坡学术交流期间记录的城市光影与南洋人文景观。',
+        en: 'Urban moments and architectural wonders captured during academic exchange in Singapore.',
+      },
+      coverImage: '/src/assets/images/singapore_mbs_sands_1794318864972.jpg',
+      coverTitle: {
+        zh: '滨海湾金沙与静谧海湾天际线',
+        en: 'Marina Bay Sands & Twilight Skyline',
+      },
+      coverLocation: {
+        zh: '新加坡 · 滨海湾金沙',
+        en: 'Marina Bay Sands, Singapore',
+      },
+      coverDate: '2025.07',
+      coverCaption: {
+        zh: '蓝调时刻海湾如镜，倒映着金沙三塔楼的壮阔轮廓与艺术科学博物馆的莲花造型。',
+        en: 'Serene blue hour reflections of Marina Bay Sands and ArtScience Museum.',
+      },
+      period: '2025',
+      location: {
+        zh: '新加坡 · 滨海湾',
+        en: 'Singapore · Marina Bay',
+      },
+      photos: [
+        {
+          id: 'sg-merlion',
+          title: {
+            zh: '鱼尾狮与滨海湾晚霞',
+            en: 'Merlion & Marina Bay Sunset',
+          },
+          imageUrl: '/src/assets/images/singapore_merlion_1794318863842.jpg',
+          location: {
+            zh: '新加坡 · 鱼尾狮公园',
+            en: 'Merlion Park, Singapore',
+          },
+          date: '2025.07',
+          caption: {
+            zh: '日落时分水雾在金色余晖中升腾，帆船酒店与现代摩天大楼屹立海湾天际线。',
+            en: 'Golden hour twilight over Marina Bay with the iconic Merlion against the skyline.',
+          },
+        },
+        {
+          id: 'sg-gardens',
+          title: {
+            zh: '滨海湾花园超级树丛',
+            en: 'Gardens by the Bay Supertrees',
+          },
+          imageUrl: '/src/assets/images/singapore_gardens_supertrees_1794318865366.jpg',
+          location: {
+            zh: '新加坡 · 滨海湾花园',
+            en: 'Gardens by the Bay, Singapore',
+          },
+          date: '2025.07',
+          caption: {
+            zh: '未来主义垂直花园在夜幕降临时璀璨点亮，热带植物与科幻建筑在此完美交融。',
+            en: 'Futuristic vertical gardens radiating evening light amidst tropical lushness.',
+          },
+        },
+        {
+          id: 'sg-jewel',
+          title: {
+            zh: '星耀樟宜雨旋涡室内瀑布',
+            en: 'Jewel Changi Rain Vortex',
+          },
+          imageUrl: '/src/assets/images/singapore_jewel_changi_1794364651884.jpg',
+          location: {
+            zh: '新加坡 · 樟宜机场',
+            en: 'Jewel Changi, Singapore',
+          },
+          date: '2025.07',
+          caption: {
+            zh: '巨型圆穹玻璃顶下飞流直下的水幕与叠翠繁茂的室内森林，兼具自然之美与建筑巧思。',
+            en: 'The world’s tallest indoor waterfall surrounded by lush tiered green canopy.',
+          },
+        },
+        {
+          id: 'sg-sentosa',
+          title: {
+            zh: '圣淘沙跨海缆车与热带海湾',
+            en: 'Sentosa Cable Car & Tropical Sea',
+          },
+          imageUrl: '/src/assets/images/singapore_sentosa_bay_1794366349419.jpg',
+          location: {
+            zh: '新加坡 · 圣淘沙岛',
+            en: 'Sentosa Island, Singapore',
+          },
+          date: '2025.07',
+          caption: {
+            zh: '俯瞰热带海岛度假胜地与穿梭于蔚蓝晴空下的跨海缆车，海天一色。',
+            en: 'Panoramic view of turquoise waters and lush islands from Sentosa Cable Car.',
+          },
+        },
+        {
+          id: 'sg-clarke',
+          title: {
+            zh: '克拉码头新加坡河畔夜色',
+            en: 'Clarke Quay Singapore River at Dusk',
+          },
+          imageUrl: '/src/assets/images/singapore_clarke_quay_1794366349912.jpg',
+          location: {
+            zh: '新加坡 · 克拉码头',
+            en: 'Clarke Quay, Singapore',
+          },
+          date: '2025.07',
+          caption: {
+            zh: '傍晚河畔灯火阑珊，彩色历史骑楼与静水倒影构成南洋风情的繁华夜景。',
+            en: 'Vibrant riverside heritage shophouses and dining quays reflected on Singapore River.',
+          },
+        },
+      ],
+    },
+    {
+      id: 'academic-conferences',
+      title: {
+        zh: '学术会议与研讨交流',
+        en: 'Academic Conferences & Keynotes',
+      },
+      subtitle: {
+        zh: '国际顶级学术盛会特邀报告与学者交流',
+        en: 'International presentations, keynotes, and academic dialogue',
+      },
+      description: {
+        zh: '参与前沿学术会议（CVPR、AAAI、KDD、WWW等），在国际学术舞台分享数据压缩与深度学习科研成果。',
+        en: 'Presenting research and engaging with the global computer science community at leading venues.',
+      },
+      coverImage: '/src/assets/images/academic_conference_keynote_1794318865266.jpg',
+      coverTitle: {
+        zh: '国际学术会议学术报告与研讨',
+        en: 'Conference Keynote & Research Presentation',
+      },
+      coverLocation: {
+        zh: '大会主报告厅',
+        en: 'Main Auditorium',
+      },
+      coverDate: '2025.08',
+      coverCaption: {
+        zh: '在国际学术会议千人主会场分享大规模数据无损压缩与深度学习前沿进展。',
+        en: 'Sharing advances on large-scale data compression and neural models.',
+      },
+      period: '2024 - 2026',
+      location: {
+        zh: '国际学术会议现场',
+        en: 'Global Conference Venues',
+      },
+      photos: [
+        {
+          id: 'ac-poster',
+          title: {
+            zh: '学术研讨海报与学者深入交流',
+            en: 'Conference Poster Session & Discussion',
+          },
+          imageUrl: '/src/assets/images/academic_conference_poster_1794364653911.jpg',
+          location: {
+            zh: '会议论文展厅',
+            en: 'Conference Poster Hall',
+          },
+          date: '2025.08',
+          caption: {
+            zh: '与来自世界各地的同行学者围聚研讨，深入探讨算法创新与实验评测细节。',
+            en: 'Engaging discussions with global peers around research findings and architecture.',
+          },
+        },
+        {
+          id: 'ac-panel',
+          title: {
+            zh: '国际学术研讨会圆桌前沿论坛',
+            en: 'Symposium Panel Discussion & Perspectives',
+          },
+          imageUrl: '/src/assets/images/academic_panel_session_1794366352024.jpg',
+          location: {
+            zh: '前沿研讨会圆桌主厅',
+            en: 'Main Symposium Panel Hall',
+          },
+          date: '2025.08',
+          caption: {
+            zh: '受邀参与前沿学术圆桌对话，共议深度学习模型演进与大规模系统优化方向。',
+            en: 'Expert panel exploring neural architectures, efficiency, and future research directions.',
+          },
+        },
+        {
+          id: 'ac-urban',
+          title: {
+            zh: '会议举办城市与现代建筑风物',
+            en: 'Host City & Modern Architectural Lines',
+          },
+          imageUrl: '/src/assets/images/gallery_urban_architecture_1793179531371.jpg',
+          location: {
+            zh: '学术会议举办城市',
+            en: 'Host City Architecture',
+          },
+          date: '2025.06',
+          caption: {
+            zh: '研学间隙漫步城市街区，几何光影与流线建筑构筑出宁静的思辨空间。',
+            en: 'Urban geometry and modern lines captured during conference study breaks.',
+          },
+        },
+        {
+          id: 'ac-award',
+          title: {
+            zh: '国际学术会议学术交流与成果表彰',
+            en: 'International Conference Presentation & Honor',
+          },
+          imageUrl: '/src/assets/images/academic_award_ceremony_1794366604440.jpg',
+          location: {
+            zh: '大会学术荣誉典礼',
+            en: 'Conference Honors Ceremony',
+          },
+          date: '2025.07',
+          caption: {
+            zh: '在国际学术会议上作成果汇报并获学者热烈反响，见证科研工作的阶段性认可。',
+            en: 'Receiving recognition and sharing research breakthroughs on international stage.',
+          },
+        },
+        {
+          id: 'ac-lab',
+          title: {
+            zh: '南开大学实验室研究组算法研讨论证',
+            en: 'Nankai University Lab Research & Algorithmic Discussion',
+          },
+          imageUrl: '/src/assets/images/academic_lab_collaboration_1794366605092.jpg',
+          location: {
+            zh: '计算机学院研究实验室',
+            en: 'CS Research Lab, Nankai University',
+          },
+          date: '2025.04',
+          caption: {
+            zh: '与实验室导师及同组研究生围绕神经网络数据压缩与模型量化方案展开深入研讨。',
+            en: 'Collaborative discussion on neural data compression architectures and pruning.',
+          },
+        },
+      ],
+    },
+    {
+      id: 'campus-moments',
+      title: {
+        zh: '南开园风物与求索行记',
+        en: 'Campus Moments & Life Footprints',
+      },
+      subtitle: {
+        zh: '南开园沉潜研学、书香静思与登高涉远',
+        en: 'Quiet library study at Nankai, balanced with outdoor journeys',
+      },
+      description: {
+        zh: '沉潜于南开求索真知，闲暇登高远眺，在攀登与阅读中感受沉静充实的生活韵律。',
+        en: 'Scholarly dedication at Nankai University paired with mountain vistas and natural reflections.',
+      },
+      coverImage: '/src/assets/images/nankai_campus_building_1794364652595.jpg',
+      coverTitle: {
+        zh: '南开大学主楼与校园晨曦',
+        en: 'Nankai Main Building & Morning Path',
+      },
+      coverLocation: {
+        zh: '南开大学八里台校区',
+        en: 'Nankai Balitai Campus',
+      },
+      coverDate: '2024.10',
+      coverCaption: {
+        zh: '晨曦映照下的庄重校舍与碧柳清池，见证数载研思求索。',
+        en: 'Morning sun over the historic university building and willow-lined walkways.',
+      },
+      period: '2023 - 2026',
+      location: {
+        zh: '南开大学 · 天津',
+        en: 'Nankai University · Tianjin',
+      },
+      photos: [
+        {
+          id: 'cm-cherry',
+          title: {
+            zh: '南开园春日繁花与湖畔新翠',
+            en: 'Spring Blossoms & Lakeside at Nankai',
+          },
+          imageUrl: '/src/assets/images/nankai_spring_cherry_1794366605386.jpg',
+          location: {
+            zh: '南开大学校园水上区',
+            en: 'Nankai Campus Lake Promenade',
+          },
+          date: '2025.04',
+          caption: {
+            zh: '春日南开园繁花似锦，粉樱与嫩柳倒映在明澈湖面，充满蓬勃生机。',
+            en: 'Spring cherry blossoms and tender willows framing the serene Nankai campus lake.',
+          },
+        },
+        {
+          id: 'cm-lotus',
+          title: {
+            zh: '南开园马蹄湖夏日荷香',
+            en: 'Nankai Horseshoe Lake Lotus Pond',
+          },
+          imageUrl: '/src/assets/images/nankai_lotus_pond_1794366350343.jpg',
+          location: {
+            zh: '南开大学马蹄湖',
+            en: 'Horseshoe Lake, Nankai University',
+          },
+          date: '2024.07',
+          caption: {
+            zh: '盛夏荷叶田田，粉荷竞放，清澈水面映照古雅红砖学府。',
+            en: 'Summer lotus blooms in full splendor across the historic Nankai campus lake.',
+          },
+        },
+        {
+          id: 'cm-ginkgo',
+          title: {
+            zh: '南开金秋银杏大道漫步',
+            en: 'Golden Ginkgo Avenue in Autumn',
+          },
+          imageUrl: '/src/assets/images/nankai_autumn_ginkgo_1794366351857.jpg',
+          location: {
+            zh: '南开大学大中路',
+            en: 'Dazhong Road, Nankai University',
+          },
+          date: '2024.11',
+          caption: {
+            zh: '秋风吹拂满目金黄，落叶铺就静谧小径，学子步履从容。',
+            en: 'Golden autumn ginkgo canopy framing historic campus brick walkways.',
+          },
+        },
+        {
+          id: 'cm-library',
+          title: {
+            zh: '南开大学图书馆书香研读',
+            en: 'Nankai University Library Study',
+          },
+          imageUrl: '/src/assets/images/gallery_campus_library_1793179530582.jpg',
+          location: {
+            zh: '南开大学图书馆',
+            en: 'Nankai University Library',
+          },
+          date: '2024.11',
+          caption: {
+            zh: '晨光倾洒在静谧的书桌前，沉浸于论文研读与算法推导的充实时光。',
+            en: 'Soft morning light in the quiet study halls of Nankai University.',
+          },
+        },
+        {
+          id: 'cm-summit',
+          title: {
+            zh: '极目远眺与行远自迩',
+            en: 'Mountain Summit & Nature Horizon',
+          },
+          imageUrl: '/src/assets/images/gallery_mountain_summit_1793179530717.jpg',
+          location: {
+            zh: '高山之巅',
+            en: 'Mountain Summit',
+          },
+          date: '2024.05',
+          caption: {
+            zh: '登临绝顶，云海翻涌，求学求索之路亦如攀登险峰，步履不停。',
+            en: 'Standing above the clouds on the summit ridge, reflecting on the journey of discovery.',
+          },
+        },
+      ],
+    },
+  ],
   gallery: [],
 
   // 12. 音乐板块 (Music & Audio)

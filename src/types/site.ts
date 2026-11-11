@@ -115,7 +115,7 @@ export interface ServiceItem {
   type?: 'review' | 'chair' | 'committee' | 'teaching' | 'other';
 }
 
-export interface GalleryItem {
+export interface GalleryPhoto {
   id: string;
   imageUrl: string;
   title: LocalizedText;
@@ -124,6 +124,23 @@ export interface GalleryItem {
   coordinates?: string;
   caption?: LocalizedText;
 }
+
+export interface GalleryAlbum {
+  id: string;
+  title: LocalizedText;
+  subtitle?: LocalizedText;
+  description?: LocalizedText;
+  coverImage: string;
+  coverTitle?: LocalizedText;
+  coverLocation?: LocalizedText;
+  coverDate?: string;
+  coverCaption?: LocalizedText;
+  period?: string;
+  location?: LocalizedText;
+  photos: GalleryPhoto[];
+}
+
+export interface GalleryItem extends GalleryPhoto {}
 
 export interface MusicTrack {
   id: string;
@@ -165,6 +182,7 @@ export interface SiteData {
   publications?: PublicationItem[];
   honors?: HonorItem[];
   services?: ServiceItem[];
+  albums?: GalleryAlbum[];
   gallery?: GalleryItem[];
   music?: MusicTrack[];
 }

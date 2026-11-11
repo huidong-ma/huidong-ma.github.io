@@ -10,6 +10,7 @@ interface LightboxModalProps {
   isOpen: boolean;
   onClose: () => void;
   onNavigate: (index: number) => void;
+  albumTitle?: string;
 }
 
 export const LightboxModal: React.FC<LightboxModalProps> = ({
@@ -18,6 +19,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
   isOpen,
   onClose,
   onNavigate,
+  albumTitle,
 }) => {
   const { t } = useLanguage();
   const currentItem = items[currentIndex];
@@ -67,9 +69,16 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
     >
       {/* Top action bar: counter and close button */}
       <div className="absolute top-4 inset-x-4 flex items-center justify-between z-10 pointer-events-none">
-        <span className="text-xs font-mono text-white/70 bg-black/40 backdrop-blur-xs px-3 py-1.5 rounded-full pointer-events-auto">
-          {currentIndex + 1} / {items.length}
-        </span>
+        <div className="flex items-center gap-2.5 pointer-events-auto">
+          {albumTitle && (
+            <span className="text-xs font-medium text-white/90 bg-white/10 backdrop-blur-xs px-3 py-1.5 rounded-full border border-white/10">
+              {albumTitle}
+            </span>
+          )}
+          <span className="text-xs font-mono font-semibold text-white/95 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15 tabular-nums">
+            {currentIndex + 1} / {items.length}
+          </span>
+        </div>
         <button
           type="button"
           onClick={onClose}
@@ -123,9 +132,14 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
 
         {/* Caption & Metadata */}
         <div className="w-full mt-4 text-center text-white px-4">
-          <h3 className="text-base font-semibold tracking-wide">
-            {t(currentItem.title)}
-          </h3>
+          <div className="flex items-center justify-center gap-2">
+            <h3 className="text-base font-semibold tracking-wide">
+              {t(currentItem.title)}
+            </h3>
+            <span className="text-xs font-mono font-medium text-white/60 tabular-nums">
+              ({currentIndex + 1}/{items.length})
+            </span>
+          </div>
 
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-1 text-xs text-white/70">
             {currentItem.date && (
@@ -146,6 +160,12 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
               </span>
             )}
           </div>
+
+          {currentItem.caption && (
+            <p className="mt-2 text-xs text-white/80 max-w-xl mx-auto leading-relaxed">
+              {t(currentItem.caption)}
+            </p>
+          )}
         </div>
       </div>
     </div>
