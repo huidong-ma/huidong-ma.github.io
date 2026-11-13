@@ -825,7 +825,7 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
         zh: 'The Web Conference (WWW)',
         en: 'The Web Conference (WWW)',
       },
-      period: '2025',
+      period: '2025, 2027',
       type: 'review',
     },
     {
@@ -851,8 +851,8 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
       id: '202607-usa-sd',
       title: { zh: 'ACL 2026 参会纪行', en: 'ACL 2026 Conference in San Diego' },
       location: { zh: '美国 · 圣迭戈', en: 'San Diego, USA' },
-      date: '',
-      coverPhotoId: 'IMG_8173',
+      date: '2026.07',
+      coverPhotoId: 'IMG_7707',
       photos: [
         {
           id: 'IMG_7541',
@@ -928,9 +928,79 @@ Please feel free to [reach out](mailto:mahdcs@163.com) if you are interested in 
         },
       ],
     },
+    {
+      id: '202608-cn-xinjiang',
+      title: { zh: '新疆之旅', en: 'Xinjiang Trip' },
+      location: { zh: '中国 · 新疆', en: 'Xinjiang, CN' },
+      date: '2026.08',
+      coverPhotoId: 'IMG_8566',
+      photos: [
+        {
+          id: 'IMG_8566',
+          title: { zh: '赛里木湖的傍晚', en: 'Evening at Sayram Lake' },
+          imageUrl: '/images/albums/202608-cn-xinjiang/IMG_8566.JPG',
+          date: '2026.08',
+          caption: { zh: '', en: '' },
+        },
+        {
+          id: 'IMG_8615',
+          title: { zh: '赛里木湖的清晨', en: 'Morning at Sayram Lake' },
+          imageUrl: '/images/albums/202608-cn-xinjiang/IMG_8615.JPG',
+          date: '2026.08',
+          caption: { zh: '', en: '' },
+        },
+        {
+          id: 'IMG_8894',
+          title: { zh: '夏塔雪山下的骏马', en: 'Horses Beneath the Xiata Snow Mountain' },
+          imageUrl: '/images/albums/202608-cn-xinjiang/IMG_8894.JPG',
+          date: '2026.08',
+          caption: { zh: '', en: '' },
+        },
+        {
+          id: 'IMG_8910',
+          title: { zh: '夏塔雪山', en: 'Xiata Snow Mountain' },
+          imageUrl: '/images/albums/202608-cn-xinjiang/IMG_8910.JPG',
+          date: '2026.08',
+          caption: { zh: '', en: '' },
+        },
+        {
+          id: 'IMG_9161',
+          title: { zh: '那拉提草原', en: 'Nalati Grassland' },
+          imageUrl: '/images/albums/202608-cn-xinjiang/IMG_9161.JPG',
+          date: '2026.08',
+          caption: { zh: '', en: '' },
+        },
+        {
+          id: 'IMG_9209',
+          title: { zh: '独库公路沿途风光', en: 'Along the Duku Highway' },
+          imageUrl: '/images/albums/202608-cn-xinjiang/IMG_9209.JPG',
+          date: '2026.08',
+          caption: { zh: '', en: '' },
+        },
+        {
+          id: 'IMG_9220',
+          title: { zh: '独库公路沿途风光', en: 'Along the Duku Highway' },
+          imageUrl: '/images/albums/202608-cn-xinjiang/IMG_9220.JPG',
+          date: '2026.08',
+          caption: { zh: '', en: '' },
+        },
+        {
+          id: 'IMG_9257',
+          title: { zh: '独库公路沿途风光', en: 'Along the Duku Highway' },
+          imageUrl: '/images/albums/202608-cn-xinjiang/IMG_9257.JPG',
+          date: '2026.08',
+          caption: { zh: '', en: '' },
+        },
+        {
+          id: 'IMG_4131',
+          title: { zh: '独库公路上的羊群', en: 'A Flock of Sheep on the Duku Highway' },
+          imageUrl: '/images/albums/202608-cn-xinjiang/IMG_4131.JPG',
+          date: '2026.08',
+          caption: { zh: '', en: '' },
+        },
+      ],
+    },
   ],
-  gallery: [],
-
   // 12. 音乐板块 (Music & Audio)
   // 说明：
   // 1. 歌曲信息（歌名、歌手名、专辑名）采用固定文本，中英文切换时保持固定不变；

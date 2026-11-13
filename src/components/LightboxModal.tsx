@@ -1,11 +1,11 @@
 import React, { useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, MapPin, Calendar } from 'lucide-react';
-import { GalleryItem } from '../types/site';
+import { GalleryPhoto } from '../types/site';
 import { useLanguage } from '../context/LanguageContext';
 import { ImageWithFallback } from './ImageWithFallback';
 
 interface LightboxModalProps {
-  items: GalleryItem[];
+  items: GalleryPhoto[];
   currentIndex: number;
   isOpen: boolean;
   onClose: () => void;

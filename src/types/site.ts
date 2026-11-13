@@ -134,8 +134,6 @@ export interface GalleryAlbum {
   photos: GalleryPhoto[];
 }
 
-export interface GalleryItem extends GalleryPhoto {}
-
 export interface MusicTrack {
   id: string;
   title: LocalizedText | string;
@@ -177,6 +175,5 @@ export interface SiteData {
   honors?: HonorItem[];
   services?: ServiceItem[];
   albums?: GalleryAlbum[];
-  gallery?: GalleryItem[];
   music?: MusicTrack[];
 }

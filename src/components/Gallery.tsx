@@ -4,38 +4,17 @@ import {
   Calendar,
   Maximize2,
 } from 'lucide-react';
-import { GalleryAlbum, GalleryItem, GalleryPhoto } from '../types/site';
+import { GalleryAlbum, GalleryPhoto } from '../types/site';
 import { useLanguage } from '../context/LanguageContext';
 import { ImageWithFallback } from './ImageWithFallback';
 import { LightboxModal } from './LightboxModal';
 
 interface GalleryProps {
   albums?: GalleryAlbum[];
-  items?: GalleryItem[];
 }
 
-export const Gallery: React.FC<GalleryProps> = ({ albums = [], items = [] }) => {
+export const Gallery: React.FC<GalleryProps> = ({ albums = [] }) => {
   const { t } = useLanguage();
-
-  // If albums are provided, use them; otherwise, wrap legacy flat items into a default album
-  const resolvedAlbums: GalleryAlbum[] = React.useMemo(() => {
-    if (albums && albums.length > 0) {
-      return albums;
-    }
-    if (items && items.length > 0) {
-      return [
-        {
-          id: 'default-album',
-          title: { zh: '精选相册', en: 'Selected Moments' },
-          location: items[0].location,
-          date: items[0].date,
-          coverPhotoId: items[0].id,
-          photos: items,
-        },
-      ];
-    }
-    return [];
-  }, [albums, items]);
 
   // Lightbox state: active photos list, photo index, and album title
   const [lightboxState, setLightboxState] = useState<{
@@ -44,13 +23,13 @@ export const Gallery: React.FC<GalleryProps> = ({ albums = [], items = [] }) => 
     albumTitle: string;
   } | null>(null);
 
-  if (resolvedAlbums.length === 0) return null;
+  if (albums.length === 0) return null;
 
   return (
     <div className="space-y-4 sm:space-y-5">
       {/* Album Rows Container - Clean, without top filter bar */}
       <div className="space-y-4 sm:space-y-5">
-        {resolvedAlbums.map((album) => (
+        {albums.map((album) => (
           <AlbumRow
             key={album.id}
             album={album}
@@ -68,7 +47,7 @@ export const Gallery: React.FC<GalleryProps> = ({ albums = [], items = [] }) => 
       {/* Global Lightbox Viewer with x/n counter */}
       {lightboxState && (
         <LightboxModal
-          items={lightboxState.photos as GalleryItem[]}
+          items={lightboxState.photos}
           currentIndex={lightboxState.photoIndex}
           isOpen={true}
           albumTitle={lightboxState.albumTitle}
